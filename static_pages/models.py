@@ -8,7 +8,8 @@ class StaticPageModel(CommonModel):
     id = models.CharField(
         max_length=25,
         unique=True,
-
+        primary_key=True,
+        verbose_name='ID страницы',
     )
     header = models.CharField(
         max_length=255,
