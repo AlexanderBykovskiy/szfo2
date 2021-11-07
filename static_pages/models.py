@@ -1,9 +1,9 @@
 from django.db import models
-from szfo.common_models import CommonModel
+from szfo.common_models import SEOModel
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
-class StaticPageModel(CommonModel):
+class StaticPageModel(SEOModel):
 
     id = models.CharField(
         max_length=25,

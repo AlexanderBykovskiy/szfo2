@@ -28,9 +28,9 @@ class SEOModel(CommonModel):
     )
     page_description = models.CharField(
         max_length=1024,
-        verbose_name='Описание для поисковых систем',
         blank=True,
         null=True,
+        verbose_name='Описание для поисковых систем',
     )
 
     class Meta:
