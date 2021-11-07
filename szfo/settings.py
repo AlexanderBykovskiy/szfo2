@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-9*+%lovjiqals5n32s)b3kdoq68@3ql%2x@w(s^wunzqo6*gy7
 
 DEBUG = env('DEBUG') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(';')
 
 # Application definition
 
@@ -98,3 +98,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
