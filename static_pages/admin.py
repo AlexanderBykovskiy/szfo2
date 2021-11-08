@@ -14,3 +14,10 @@ class StaticPageAdmin(admin.ModelAdmin):
         ('SEO', {'fields': ('slug', 'page_description')}),
     )
     prepopulated_fields = {'slug': ('id',)}
+
+
+@admin.register(MainMenuModel)
+class StaticPageAdmin(admin.ModelAdmin):
+    list_display = ('label', 'page', 'order',)
+    ordering = ['order', 'label']
+    list_display_links = ('label',)

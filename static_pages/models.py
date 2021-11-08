@@ -40,14 +40,19 @@ class MainMenuModel(models.Model):
         max_length=25,
         verbose_name='Заголовок пункта меню',
     )
-    link = models.CharField(
-        max_length=255,
-        verbose_name='ID страницы или URL',
+    page = models.OneToOneField(
+        StaticPageModel,
+        on_delete=models.CASCADE,
+        verbose_name='Страница',
+    )
+    order = models.PositiveIntegerField(
+        default=10,
+        verbose_name='Позиция в списке',
     )
 
     class Meta:
         verbose_name = 'Пункт главного меню'
-        verbose_name_plural = 'Мункты главного меню'
+        verbose_name_plural = 'Пункты главного меню'
 
     def __str__(self):
         return self.label
