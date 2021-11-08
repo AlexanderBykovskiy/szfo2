@@ -13,3 +13,4 @@ class StaticPageAdmin(admin.ModelAdmin):
         ('Основные данные', {'fields': ('id', 'header', 'content',)}),
         ('SEO', {'fields': ('slug', 'page_description')}),
     )
+    prepopulated_fields = {'slug': ('id',)}
