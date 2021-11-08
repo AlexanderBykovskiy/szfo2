@@ -1,8 +1,11 @@
 from django.db import models
+from django.urls import reverse
+
 from szfo.common_models import SEOModel
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
+# Модель статичных страниц
 class StaticPageModel(SEOModel):
 
     id = models.CharField(
@@ -26,3 +29,25 @@ class StaticPageModel(SEOModel):
 
     def __str__(self):
         return self.header
+
+    def get_absolute_url(self):
+        return reverse('static_page', kwargs={'slug': self.slug})
+
+
+# Модель меню
+class MainMenuModel(models.Model):
+    label = models.CharField(
+        max_length=25,
+        verbose_name='Заголовок пункта меню',
+    )
+    link = models.CharField(
+        max_length=255,
+        verbose_name='ID страницы или URL',
+    )
+
+    class Meta:
+        verbose_name = 'Пункт главного меню'
+        verbose_name_plural = 'Мункты главного меню'
+
+    def __str__(self):
+        return self.label

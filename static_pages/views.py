@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def static_page_view(request, slug):
+    context = {
+        'title': 'Page',
+    }
+    return render(request, 'index.html', context)

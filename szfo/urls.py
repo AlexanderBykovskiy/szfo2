@@ -11,7 +11,7 @@ urlpatterns = [
         admin.site.urls
     ),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    re_path(
+    path(
         '',
         include('static_pages.urls', namespace='static_pages')
     ),
