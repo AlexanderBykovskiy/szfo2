@@ -23,15 +23,15 @@ class StaticPageModel(SEOModel):
         verbose_name='Содержимое',
     )
 
-    class Meta:
-        verbose_name = 'Статическая страница'
-        verbose_name_plural = 'Статические страницы'
-
     def __str__(self):
         return self.header
 
     def get_absolute_url(self):
-        return reverse('static_page', kwargs={'slug': self.slug})
+        return '/' + self.slug + '/'
+
+    class Meta:
+        verbose_name = 'Статическая страница'
+        verbose_name_plural = 'Статические страницы'
 
 
 # Модель меню
@@ -50,10 +50,10 @@ class MainMenuModel(models.Model):
         verbose_name='Позиция в списке',
     )
 
+    def __str__(self):
+        return self.label
+
     class Meta:
         ordering = ['order']
         verbose_name = 'Пункт главного меню'
         verbose_name_plural = 'Пункты главного меню'
-
-    def __str__(self):
-        return self.label

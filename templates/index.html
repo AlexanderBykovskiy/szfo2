@@ -1,12 +1,18 @@
 {% load static_pages_tags %}
 
 {% block seo %}
-	<title>{{ title }}</title>
+	<title>{{ page_object.header }}</title>
 {% endblock %}
 
 {% block body %}
-	<h1>{{ title }}</h1>
+	<h1>{{ page_object.header }}</h1>
 
-	{% main_menu_block page_id %}
+	{% main_menu_block page_object.id %}
+
+	{% autoescape off %}
+		<div>{{ page_object.content }}</div>
+	{% endautoescape %}
+
+	{{ page_object }}
 
 {% endblock %}

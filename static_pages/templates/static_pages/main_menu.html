@@ -2,7 +2,10 @@
 	<ul>
 		{% for main_menu_item in main_menu_list %}
 			<li>
-				{% if main_menu_item.page.id == active_page_id %}* {% endif %}{{ main_menu_item.page.id }} - {{ main_menu_item.label }}
+				<a
+					href="{{ main_menu_item.page.get_absolute_url }}"
+					class="main-menu-item{% if main_menu_item.page.id == active_page_id %} active{% endif %}">{{ main_menu_item.label }} {{ main_menu_item.slug }}
+				</a>
 			</li>
 		{% endfor %}
 	</ul>
