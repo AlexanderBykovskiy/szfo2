@@ -51,6 +51,7 @@ class MainMenuModel(models.Model):
     )
 
     class Meta:
+        ordering = ['order']
         verbose_name = 'Пункт главного меню'
         verbose_name_plural = 'Пункты главного меню'
 
