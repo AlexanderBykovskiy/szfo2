@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
+{% load static_pages_tags %}
+
+{% block seo %}
 	<title>{{ title }}</title>
-</head>
-<body>
-	***
-</body>
-</html>
+{% endblock %}
+
+{% block body %}
+	<h1>{{ title }}</h1>
+
+	{% main_menu_block page_id %}
+
+{% endblock %}

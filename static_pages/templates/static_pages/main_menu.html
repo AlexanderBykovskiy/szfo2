@@ -1,0 +1,9 @@
+<div>
+	<ul>
+		{% for main_menu_item in main_menu_list %}
+			<li>
+				{% if main_menu_item.page.id == active_page_id %}* {% endif %}{{ main_menu_item.page.id }} - {{ main_menu_item.label }}
+			</li>
+		{% endfor %}
+	</ul>
+</div>
