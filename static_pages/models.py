@@ -7,7 +7,6 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Модель статичных страниц
 class StaticPageModel(SEOModel):
-
     id = models.CharField(
         max_length=25,
         unique=True,
@@ -57,3 +56,23 @@ class MainMenuModel(models.Model):
         ordering = ['order']
         verbose_name = 'Пункт главного меню'
         verbose_name_plural = 'Пункты главного меню'
+
+
+# Модель блоков данных
+class ContentBlockModel(models.Model):
+    label = models.CharField(
+        max_length=25,
+        verbose_name='Заголовок блока',
+    )
+    content = RichTextUploadingField(
+        config_name='default',
+        verbose_name='Содержимое блока',
+    )
+
+    def __str__(self):
+        return self.label
+
+    class Meta:
+        ordering = ['label']
+        verbose_name = 'Блок данных'
+        verbose_name_plural = 'Блоки данных'

@@ -22,3 +22,10 @@ class StaticPageAdmin(admin.ModelAdmin):
     ordering = ['order', 'label']
     list_display_links = ('label',)
     list_editable = ('order',)
+
+
+@admin.register(ContentBlockModel)
+class ContentBlockAdmin(admin.ModelAdmin):
+    list_display = ('id', 'label',)
+    ordering = ['label']
+    list_display_links = ('label',)
