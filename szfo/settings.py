@@ -134,6 +134,7 @@ CKEDITOR_CONFIGS = {
                 '-', 'Font', 'FontSize',
                 '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
                 '-', 'Outdent', 'Indent',
+                # '-', 'Scayt',
             ],
             [
                 '-', 'Bold', 'Italic', 'Underline', 'TextColor',
@@ -145,6 +146,17 @@ CKEDITOR_CONFIGS = {
         'height': 500,
         'width': '100%',
         'toolbarCanCollapse': False,
-        'forcePasteAsPlainText': True
+        'forcePasteAsPlainText': True,
+        'extraPlugins': ','.join([
+            'uploadimage',
+            'div',
+            'divarea',
+            'link',
+            'scayt',
+            'showblocks',
+            'sourcedialog',
+            'uploadwidget',
+        ]),
+        'extraAllowedContent': 'span; *[id]; *(*);',
     }
 }
