@@ -1,11 +1,14 @@
+{% extends 'base.html' %}
+
 {% load static_pages_tags %}
+
 
 {% block seo %}
 	<title>{{ page_object.header }}</title>
 {% endblock %}
 
 {% block body %}
-	<h1>{{ page_object.header }}</h1>
+	<h1 class="text-2xl mb-4">{{ page_object.header }}</h1>
 
 	{% main_menu_block page_object.id %}
 
