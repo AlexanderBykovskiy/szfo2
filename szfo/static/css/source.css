@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.page-container {
+    @apply container mx-auto max-w-screen-xl px-2 md:px-4
+}
+
+.page-title {
+    @apply block text-2xl mt-4 mb-6
+}

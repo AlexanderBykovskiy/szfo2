@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static_pages_tags %}
+
+
+{% block seo %}
+	<title>{{ page_object.header }}</title>
+{% endblock %}
+
+{% block body %}
+
+	{% page_title_block page_object.header %}
+
+	{% main_menu_block page_object.id %}
+
+	<div class="page-container">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+
+			<div>
+				{% autoescape off %}
+					{{ page_object.content }}
+				{% endautoescape %}
+			</div>
+
+			<div>
+				form
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}

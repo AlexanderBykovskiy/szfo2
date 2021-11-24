@@ -9,4 +9,8 @@ def static_page_view(request, slug):
     context = {
         'page_object': page_object,
     }
-    return render(request, 'index.html', context)
+
+    if (slug == 'contacts'):
+        return render(request, 'contacts.html', context)
+    else:
+        return render(request, 'index.html', context)
