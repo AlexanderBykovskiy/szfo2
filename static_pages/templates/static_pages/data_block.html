@@ -1,5 +1,7 @@
-<div class="data-block">
-	{% autoescape off %}
-		{{ data_block }}
-	{% endautoescape %}
-</div>
+{% if data_block %}
+	<div class="data-block">
+		{% autoescape off %}
+			{{ data_block }}
+		{% endautoescape %}
+	</div>
+{% endif %}
