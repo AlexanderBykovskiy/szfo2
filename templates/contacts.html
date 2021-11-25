@@ -17,9 +17,12 @@
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
 
 			<div>
-				{% autoescape off %}
-					{{ page_object.content }}
-				{% endautoescape %}
+				<div>
+					{% autoescape off %}
+						{{ page_object.content }}
+					{% endautoescape %}
+				</div>
+				{% data_block 2 %}
 			</div>
 
 			<div>

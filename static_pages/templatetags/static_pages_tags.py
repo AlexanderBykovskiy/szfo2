@@ -22,3 +22,12 @@ def main_menu_block(active_page_id=None):
 @register.inclusion_tag('static_pages/page_title.html')
 def page_title_block(page_title):
     return {'page_title': page_title}
+
+
+@register.inclusion_tag('static_pages/data_block.html')
+def data_block(block_id):
+    try:
+        data = ContentBlockModel.objects.get(id=block_id).content
+    except ContentBlockModel.DoesNotExist:
+        data = None
+    return {'data_block': data}
