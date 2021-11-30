@@ -60,6 +60,12 @@ class MainMenuModel(models.Model):
 
 # Модель блоков данных
 class ContentBlockModel(models.Model):
+    id = models.CharField(
+        max_length=25,
+        unique=True,
+        primary_key=True,
+        verbose_name='ID страницы',
+    )
     label = models.CharField(
         max_length=25,
         verbose_name='Заголовок блока',
