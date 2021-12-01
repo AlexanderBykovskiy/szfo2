@@ -16,6 +16,8 @@ class FeedbackModel(CommonModel):
     email = models.CharField(
         max_length=100,
         verbose_name='Email',
+        blank=True,
+        null=True,
     )
     message = models.TextField(
         verbose_name='Сообщение',
