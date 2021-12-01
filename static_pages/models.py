@@ -1,5 +1,4 @@
 from django.db import models
-from django.urls import reverse
 
 from szfo.common_models import SEOModel
 from ckeditor_uploader.fields import RichTextUploadingField

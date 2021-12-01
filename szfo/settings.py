@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'static_pages.apps.StaticPagesConfig',
+    'feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [
