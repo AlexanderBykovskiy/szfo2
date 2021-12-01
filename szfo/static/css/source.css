@@ -2,10 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Forms */
+.form-group {
+    @apply flex gap-y-1 gap-x-2
+}
+.input-group-v {
+    @apply flex-col
+}
+.input-group-v label {
+    @apply text-sm font-medium
+}
+
+
+.form-group input[type='text'],
+.form-group textarea
+{
+    @apply border rounded-md outline-none py-2 px-4 focus:ring-1 focus:ring-sky-700 focus:border-sky-700
+}
+
+
 .page-container {
     @apply container mx-auto max-w-screen-xl px-2 md:px-4
 }
 
 .page-title {
-    @apply block text-2xl mt-4 mb-6
+    @apply block text-2xl mt-4 mb-6 text-sky-700
+}
+
+
+.feedback-form {
+    @apply flex flex-col gap-y-2
 }
