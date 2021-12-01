@@ -20,6 +20,10 @@ class FeedbackModel(CommonModel):
     message = models.TextField(
         verbose_name='Сообщение',
     )
+    processed = models.BooleanField(
+        default=False,
+        verbose_name='Обработано',
+    )
 
     def __str__(self):
         return self.name
