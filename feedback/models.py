@@ -26,6 +26,10 @@ class FeedbackModel(CommonModel):
         default=False,
         verbose_name='Обработано',
     )
+    accept_processing = models.BooleanField(
+        default=False,
+        verbose_name='ФЗ-152',
+    )
 
     def __str__(self):
         return self.name

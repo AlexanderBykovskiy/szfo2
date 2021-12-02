@@ -14,10 +14,41 @@
 }
 
 
+.button-group-g {
+    @apply flex-row flex-wrap
+}
+
+
 .form-group input[type='text'],
 .form-group textarea
 {
-    @apply border rounded-md outline-none py-2 px-4 focus:ring-1 focus:ring-sky-700 focus:border-sky-700
+    @apply border rounded-md outline-none py-1.5 px-2 focus:ring-1 focus:ring-sky-700 focus:border-sky-700
+}
+.form-group.error input[type='text'],
+.form-group.error textarea,
+.form-group.error input[type='checkbox']
+{
+    @apply border-red-600 focus:border-red-600 focus:ring-red-600
+}
+
+.form-group .itput-checkbox {
+    @apply flex items-center gap-2
+}
+
+.form-group input[type='checkbox'] {
+    @apply ounline-none border rounded border-gray-300 focus:ring-sky-600 h-4 w-4 text-sky-700
+}
+
+.form-group .form-error {
+    @apply inline-flex flex-wrap text-xs text-red-600
+}
+
+.button-p, .button-s {
+    @apply inline-flex items-center rounded-md px-5 py-3 border border-transparent text-sm leading-4 font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2
+}
+
+.button-p {
+    @apply text-white bg-sky-700 hover:bg-sky-800 focus:ring-sky-600
 }
 
 
@@ -26,7 +57,7 @@
 }
 
 .page-title {
-    @apply block text-2xl mt-4 mb-6 text-sky-700
+    @apply block text-3xl mt-4 mb-6 text-sky-700
 }
 
 

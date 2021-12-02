@@ -9,3 +9,4 @@ class FeedbackAdmin(admin.ModelAdmin):
     ordering = ['-created_date']
     list_display_links = ('name',)
     list_filter = ('processed', 'created_date')
+    readonly_fields = ['accept_processing']
