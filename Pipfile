@@ -9,6 +9,7 @@ django-environ = "*"
 psycopg2 = "*"
 django-ckeditor = "*"
 pillow = "*"
+easy-thumbnails = "*"
 
 [dev-packages]
 

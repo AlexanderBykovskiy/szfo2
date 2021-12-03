@@ -18,14 +18,15 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(';')
 
 # Application definition
 INSTALLED_APPS = [
+    'ckeditor',
+    'ckeditor_uploader',
+    'easy_thumbnails',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ckeditor',
-    'ckeditor_uploader',
     'static_pages.apps.StaticPagesConfig',
     'feedback.apps.FeedbackConfig',
     'news.apps.NewsConfig',
@@ -165,4 +166,18 @@ CKEDITOR_CONFIGS = {
         ]),
         'extraAllowedContent': 'span; *[id]; *(*);',
     }
+}
+
+
+# Easy-thumbnails
+THUMBNAIL_ALIASES = {
+    '': {
+        'news-xs': {'size': (300, 200), 'crop': True},
+        'news-sm': {'size': (400, 300), 'crop': True},
+        'news-md': {'size': (600, 400), 'crop': True},
+        'news-lg': {'size': (900, 600), 'crop': True},
+        'news-xl': {'size': (1200, 800), 'crop': True},
+
+        'news-md-long': {'size': (620, 310), 'crop': True},
+    },
 }
