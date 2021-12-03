@@ -24,7 +24,7 @@ class NewsModel(SEOModel):
         null=True,
         verbose_name='Автор',
     )
-    publication_date = models.DateTimeField(
+    publication_date = models.DateField(
         blank=True,
         null=True,
         verbose_name='Дата публикации',
