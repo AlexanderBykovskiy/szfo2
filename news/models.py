@@ -41,5 +41,5 @@ class NewsModel(SEOModel):
         return '/news/' + self.slug + '/'
 
     class Meta:
-        verbose_name = 'Статическая страница'
-        verbose_name_plural = 'Статические страницы'
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
