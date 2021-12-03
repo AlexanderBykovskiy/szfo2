@@ -31,7 +31,10 @@
 			{% if is_sent_feedback %}
 				<div class="flex flex-col justify-center items-center bg-green-50 rounded-xl py-6">
 					<div class="inline-flex flex-col items-center gap-y-2">
-						<div data-icon="ei-check" data-size="m" class="text-green-600 w-16 h-16"></div>
+						<svg class="text-green-600 h-12 w-12" stroke-width="1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M7 12.5L10 15.5L17 8.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
 						<h4 class="text-2xl text-green-600">Ваше сообщене принято!</h4>
 						<p class="text-sm text-green-600 pb-6">В ближайшее время мы свяжемся с Вами.</p>
 					</div>

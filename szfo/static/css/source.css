@@ -36,7 +36,7 @@
 }
 
 .form-group input[type='checkbox'] {
-    @apply ounline-none border rounded border-gray-300 focus:ring-sky-600 h-4 w-4 text-sky-700
+    @apply border rounded border-gray-300 focus:ring-sky-600 h-4 w-4 text-sky-700
 }
 
 .form-group .form-error {
