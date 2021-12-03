@@ -8,14 +8,17 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="text-2xl mb-4">{{ page_object.header }}</h1>
 
 	{% main_menu_block page_object.id %}
 
-	{% autoescape off %}
-		<div>{{ page_object.content }}</div>
-	{% endautoescape %}
+	{% page_title_block page_object.header %}
 
-	{{ page_object }}
+	<div class="page-container">
+
+		{% autoescape off %}
+			<div>{{ page_object.content }}</div>
+		{% endautoescape %}
+
+	</div>
 
 {% endblock %}

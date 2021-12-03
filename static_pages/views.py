@@ -29,4 +29,4 @@ def static_page_view(request, slug):
         return render(request, 'contacts.html', context)
 
     else:
-        return render(request, 'index.html', context)
+        return render(request, 'static-page.html', context)
