@@ -36,7 +36,11 @@
 }
 
 .form-group input[type='checkbox'] {
-    @apply border rounded border-gray-300 focus:ring-sky-600 h-4 w-4 text-sky-700
+    @apply h-4 w-4 z-0 !border-opacity-0
+}
+.form-group input[type='checkbox']:after {
+    content: '*';
+    @apply flex flex-col h-4 w-4 border rounded bg-white
 }
 
 .form-group .form-error {
