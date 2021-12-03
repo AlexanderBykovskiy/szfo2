@@ -38,10 +38,10 @@
 .form-group input[type='checkbox'] {
     @apply h-4 w-4 z-0 !border-opacity-0
 }
-.form-group input[type='checkbox']:after {
+/*.form-group input[type='checkbox']:after {
     content: '*';
     @apply flex flex-col h-4 w-4 border rounded bg-white
-}
+}*/
 
 .form-group .form-error {
     @apply inline-flex flex-wrap text-xs text-red-600
