@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from szfo.common_models import SEOModel
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -38,7 +39,7 @@ class NewsModel(SEOModel):
         return self.header
 
     def get_absolute_url(self):
-        return '/news/' + self.slug + '/'
+        return reverse('news:news_item', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Новость'

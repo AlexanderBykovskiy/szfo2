@@ -9,4 +9,9 @@ urlpatterns = [
         NewsList.as_view(),
         name='news_list'
     ),
+    re_path(
+        r'^(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*/?$)',
+        NewsItem.as_view(),
+        name='news_item'
+    )
 ]

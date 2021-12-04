@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static_pages_tags %}
+
+
+{% block seo %}
+	<title>{{ page_object.header }}</title>
+{% endblock %}
+
+{% block body %}
+
+	{% main_menu_block page_object.id %}
+
+	{% page_title_block page_object.header %}
+
+	<div class="page-container">
+
+		<section class="news-item">
+			{% autoescape off %}
+				{{ news_item.content }}
+			{% endautoescape %}
+			{{ news_item.author }}
+			{{ news_item.publication_date }}
+		</section>
+
+	</div>
+
+{% endblock %}
