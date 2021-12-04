@@ -10,6 +10,10 @@ urlpatterns = [
         r'admin/?',
         admin.site.urls
     ),
+    re_path(
+        r'news/?',
+        include('news.urls', namespace='news')
+    ),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path(
         '',

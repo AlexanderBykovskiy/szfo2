@@ -14,10 +14,10 @@
 	{% page_title_block page_object.header %}
 
 	<div class="page-container">
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+		<section class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
 
 			<div class="flex flex-col gap-y-4">
-				<div>
+				<div class="content">
 					{% autoescape off %}
 						{{ page_object.content }}
 					{% endautoescape %}
@@ -80,7 +80,7 @@
 				</div>
 			{% endif %}
 
-		</div>
+		</section>
 	</div>
 
 {% endblock %}

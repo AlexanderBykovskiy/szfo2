@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from szfo.common_models import SEOModel
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -17,6 +18,8 @@ class StaticPageModel(SEOModel):
         verbose_name='Заголовок страницы',
     )
     content = RichTextUploadingField(
+        blank=True,
+        null=True,
         config_name='default',
         verbose_name='Содержимое',
     )
@@ -25,7 +28,7 @@ class StaticPageModel(SEOModel):
         return self.header
 
     def get_absolute_url(self):
-        return '/' + self.slug + '/'
+        return reverse('static_pages:static_page', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Статическая страница'
