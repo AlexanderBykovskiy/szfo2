@@ -3,15 +3,21 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path, path, include
 from szfo.common_views import pageNotFound
+from news.views import NewsList
 
 
 urlpatterns = [
     re_path(
-        r'admin/?',
+        r'^admin/?',
         admin.site.urls
     ),
     re_path(
-        r'news/?',
+        r'^news/?$',
+        NewsList.as_view(),
+        name='news_list'
+    ),
+    re_path(
+        r'^news/',
         include('news.urls', namespace='news')
     ),
     path('ckeditor/', include('ckeditor_uploader.urls')),

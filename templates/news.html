@@ -24,7 +24,7 @@
 		<section class="news-list">
 			{% for news_item in news_list %}
 				<div>
-					{{ news_item.header }}
+					<a href="{{ news_item.get_absolute_url }}">{{ news_item.header }}</a>
 				</div>
 			{% endfor %}
 		</section>
