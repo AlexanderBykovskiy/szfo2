@@ -22,18 +22,23 @@
 			{% endautoescape %}
 		{% endif %}
 
-		<section class="news-list">
-			{% for news_item in news_list %}
-				<div>
-					<a href="{{ news_item.get_absolute_url }}">
-						<div>
-							<img src="{{ news_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
-						</div>
-						<div>{{ news_item.header }}</div>
-						<div>{{ news_item.short_content }}</div>
-					</a>
-				</div>
-			{% endfor %}
+		<section>
+			<div class="news-list">
+				{% for news_item in news_list %}
+					<div class="news-item{% if forloop.counter == 1 %} first{% endif %}">
+						<a href="{{ news_item.get_absolute_url }}">
+							<div>
+								<img src="{{ news_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
+							</div>
+							<div>{{ news_item.header }}</div>
+							<div>{{ news_item.short_content }}</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+
+			{% pagination_block paginator page_obj %}
+
 		</section>
 
 	</div>

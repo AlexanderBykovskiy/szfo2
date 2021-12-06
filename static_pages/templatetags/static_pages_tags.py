@@ -31,3 +31,11 @@ def data_block(block_id):
     except ContentBlockModel.DoesNotExist:
         data = None
     return {'data_block': data}
+
+
+@register.inclusion_tag('static_pages/pagination.html')
+def pagination_block(paginator, page_obj):
+    return {
+        'paginator': paginator,
+        'page_obj': page_obj,
+    }
