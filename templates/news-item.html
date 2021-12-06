@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load thumbnail %}
 {% load static_pages_tags %}
 
 
@@ -16,6 +17,9 @@
 	<div class="page-container">
 
 		<section class="news-item">
+			<div>
+				<img src="{{ news_item.cover|thumbnail_url:'publication-lg' }}" alt="{{ page_object.header }}">
+			</div>
 			{% autoescape off %}
 				{{ news_item.content }}
 			{% endautoescape %}

@@ -18,8 +18,6 @@ class NewsModel(SEOModel):
     #)
 
     cover = ThumbnailerImageField(
-        blank=True,
-        default=None,
         upload_to='images/news/',
         verbose_name='Обложка новости',
     )
@@ -52,3 +50,4 @@ class NewsModel(SEOModel):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+        ordering = ['-publication_date']

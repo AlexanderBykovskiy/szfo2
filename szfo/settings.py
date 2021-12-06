@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'easy_thumbnails',
+    'easy_thumbnails.optimize',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -172,12 +173,16 @@ CKEDITOR_CONFIGS = {
 # Easy-thumbnails
 THUMBNAIL_ALIASES = {
     '': {
-        'news-xs': {'size': (300, 200), 'crop': True},
-        'news-sm': {'size': (400, 300), 'crop': True},
-        'news-md': {'size': (600, 400), 'crop': True},
-        'news-lg': {'size': (900, 600), 'crop': True},
-        'news-xl': {'size': (1200, 800), 'crop': True},
+        'publication-xs': {'size': (400, 300), 'crop': True},
+        'publication-sm': {'size': (640, 425), 'crop': True},
+        'publication-md': {'size': (768, 512), 'crop': True},
+        'publication-lg': {'size': (1024, 680), 'crop': True},
+        'publication-xl': {'size': (1280, 850), 'crop': True},
 
-        'news-md-long': {'size': (620, 310), 'crop': True},
+        'publication-xs-long': {'size': (400, 200), 'crop': True},
+        'publication-sm-long': {'size': (640, 320), 'crop': True},
+        'publication-md-long': {'size': (768, 384), 'crop': True},
+        'publication-lg-long': {'size': (1024, 512), 'crop': True},
+        'publication-xl-long': {'size': (1280, 640), 'crop': True},
     },
 }

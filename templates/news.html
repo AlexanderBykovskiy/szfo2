@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load thumbnail %}
 {% load static_pages_tags %}
 
 
@@ -24,6 +25,9 @@
 		<section class="news-list">
 			{% for news_item in news_list %}
 				<div>
+					<div>
+						<img src="{{ news_item.cover|thumbnail_url:'publication-xs' }}" alt="{{ page_object.header }}">
+					</div>
 					<a href="{{ news_item.get_absolute_url }}">{{ news_item.header }}</a>
 				</div>
 			{% endfor %}
