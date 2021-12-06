@@ -1,5 +1,5 @@
-{% if paginator.num_pages > 1 %}
-	<div class="pagination">
+{% if page_obj.has_other_pages %}
+	<nav class="pagination">
 		<ul>
 			{% if page_obj.has_previous %}
 				<li class="previous">
@@ -10,14 +10,14 @@
 			{% endif %}
 			{% for page_number in paginator.page_range %}
 				<li class="page-number{% if page_obj.number == forloop.counter %} active{% endif %}">
-					{% if page_obj.number != forloop.counter %}
-						<a href="?page={{ page_number }}">
-							{{ page_number }}
-						</a>
-					{% else %}
+					{% if page_obj.number == page_number %}
 						<span>
 							{{ page_number }}
 						</span>
+					{% elif page_number >= page_obj.number|add:-4 and page_number <= page_obj.number|add:4 %}
+						<a href="?page={{ page_number }}">
+							{{ page_number }}
+						</a>
 					{% endif %}
 				</li>
 			{% endfor %}
@@ -29,5 +29,5 @@
 				</li>
 			{% endif %}
 		</ul>
-	</div>
+	</nav>
 {% endif %}
