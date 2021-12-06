@@ -16,6 +16,9 @@ class NewsModel(SEOModel):
         upload_to='images/news/',
         verbose_name='Обложка новости',
     )
+    short_content = models.TextField(
+        verbose_name='Тизер',
+    )
     content = RichTextUploadingField(
         config_name='default',
         verbose_name='Содержимое',

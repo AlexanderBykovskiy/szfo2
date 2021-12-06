@@ -68,3 +68,8 @@
 .feedback-form {
     @apply flex flex-col gap-y-2
 }
+
+
+.news-list {
+    @apply grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4 sm:grid-cols-3 lg:gap-4
+}

@@ -25,10 +25,13 @@
 		<section class="news-list">
 			{% for news_item in news_list %}
 				<div>
-					<div>
-						<img src="{{ news_item.cover|thumbnail_url:'publication-xs' }}" alt="{{ page_object.header }}">
-					</div>
-					<a href="{{ news_item.get_absolute_url }}">{{ news_item.header }}</a>
+					<a href="{{ news_item.get_absolute_url }}">
+						<div>
+							<img src="{{ news_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
+						</div>
+						<div>{{ news_item.header }}</div>
+						<div>{{ news_item.short_content }}</div>
+					</a>
 				</div>
 			{% endfor %}
 		</section>

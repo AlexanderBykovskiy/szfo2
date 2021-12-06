@@ -173,12 +173,14 @@ CKEDITOR_CONFIGS = {
 # Easy-thumbnails
 THUMBNAIL_ALIASES = {
     '': {
+        'publication-xxs': {'size': (300, 225), 'crop': True},
         'publication-xs': {'size': (400, 300), 'crop': True},
         'publication-sm': {'size': (640, 425), 'crop': True},
         'publication-md': {'size': (768, 512), 'crop': True},
         'publication-lg': {'size': (1024, 680), 'crop': True},
         'publication-xl': {'size': (1280, 850), 'crop': True},
 
+        'publication-xxs-long': {'size': (300, 150), 'crop': True},
         'publication-xs-long': {'size': (400, 200), 'crop': True},
         'publication-sm-long': {'size': (640, 320), 'crop': True},
         'publication-md-long': {'size': (768, 384), 'crop': True},
