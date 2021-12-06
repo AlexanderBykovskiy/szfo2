@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from easy_thumbnails.fields import ThumbnailerImageField
 
 from szfo.common_models import SEOModel
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -15,6 +16,11 @@ class NewsModel(SEOModel):
     #    upload_to='images/news/',
     #    verbose_name='Обложка новости',
     #)
+
+    cover = ThumbnailerImageField(
+        upload_to='images/news/',
+        verbose_name='Обложка новости',
+    )
     content = RichTextUploadingField(
         config_name='default',
         verbose_name='Содержимое',
