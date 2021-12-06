@@ -18,6 +18,8 @@ class NewsModel(SEOModel):
     #)
 
     cover = ThumbnailerImageField(
+        blank=True,
+        default=None,
         upload_to='images/news/',
         verbose_name='Обложка новости',
     )
