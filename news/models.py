@@ -12,11 +12,6 @@ class NewsModel(SEOModel):
         max_length=255,
         verbose_name='Заголовок',
     )
-    #cover = models.ImageField(
-    #    upload_to='images/news/',
-    #    verbose_name='Обложка новости',
-    #)
-
     cover = ThumbnailerImageField(
         upload_to='images/news/',
         verbose_name='Обложка новости',
