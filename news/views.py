@@ -7,7 +7,7 @@ from static_pages.models import StaticPageModel
 
 class NewsList(ListView):
     model = NewsModel
-    paginate_by = 2
+    paginate_by = 24
     template_name = 'news.html'
     context_object_name = 'news_list'
 
