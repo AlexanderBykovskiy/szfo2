@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'static_pages.apps.StaticPagesConfig',
     'feedback.apps.FeedbackConfig',
     'news.apps.NewsConfig',
+    'publications.apps.PublicationsConfig',
 ]
 
 MIDDLEWARE = [
