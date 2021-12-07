@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib import admin
+from django.utils.html import format_html
 from easy_thumbnails.fields import ThumbnailerImageField
 
 from szfo.common_models import SEOModel
@@ -63,17 +65,13 @@ class PublicationsModel(SEOModel):
     )
     source = models.CharField(
         max_length=255,
-        blank=True,
-        null=True,
         verbose_name='Наименование источника',
     )
     source_url = models.URLField(
         max_length=512,
-        verbose_name='URL',
+        verbose_name='URL источника',
     )
     publication_date = models.DateField(
-        blank=True,
-        null=True,
         verbose_name='Дата публикации',
     )
     published = models.BooleanField(
@@ -86,6 +84,10 @@ class PublicationsModel(SEOModel):
 
     #def get_absolute_url(self):
     #    return reverse('publications:', kwargs={'slug': self.slug})
+
+    @admin.display(description='Ссылка на источник')
+    def source_link(self):
+        return format_html('<a href="{}">Перейти к источнику</a>', self.source_url)
 
     class Meta:
         verbose_name = 'Публикация'

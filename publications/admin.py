@@ -19,14 +19,14 @@ class StaticPageAdmin(admin.ModelAdmin):
 
 @admin.register(PublicationsModel)
 class StaticPageAdmin(admin.ModelAdmin):
-    list_display = ('header', 'source', 'publication_date', 'published',)
+    list_display = ('header', 'source', 'source_link', 'publication_date', 'published',)
     ordering = ['-publication_date']
     list_display_links = ('header',)
     search_fields = ('header', 'source',)
     list_filter = ('publication_date', 'published',)
 
     fieldsets = (
-        ('Основные данные', {'fields': ('header', 'cover', 'source', 'publication_date', 'published',)}),
+        ('Основные данные', {'fields': ('header', 'cover', ('source', 'source_url',), 'publication_date', 'published',)}),
         ('SEO', {'fields': ('slug', 'page_description',)}),
     )
     prepopulated_fields = {'slug': ('header',)}
