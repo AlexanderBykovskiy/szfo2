@@ -61,10 +61,6 @@ class PublicationsModel(SEOModel):
         upload_to='images/publications/',
         verbose_name='Обложка публикации',
     )
-    content = RichTextUploadingField(
-        config_name='default',
-        verbose_name='Содержимое',
-    )
     source = models.CharField(
         max_length=255,
         blank=True,

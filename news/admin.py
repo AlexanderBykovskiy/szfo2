@@ -11,7 +11,7 @@ class StaticPageAdmin(admin.ModelAdmin):
     list_filter = ('author', 'publication_date', 'published')
 
     fieldsets = (
-        ('Основные данные', {'fields': ('header', 'cover', 'short_content', 'content', 'author', 'publication_date', 'published',)}),
+        ('Основные данные', {'fields': ('header', 'cover', 'short_content', 'content', ('author', 'source_url',), 'publication_date', 'published',)}),
         ('SEO', {'fields': ('slug', 'page_description',)}),
     )
     prepopulated_fields = {'slug': ('header',)}
