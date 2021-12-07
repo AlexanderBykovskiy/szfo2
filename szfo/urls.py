@@ -20,6 +20,15 @@ urlpatterns = [
         r'^news/',
         include('news.urls', namespace='news')
     ),
+    #re_path(
+    #    r'^articles/?$',
+    #    ArticlesList.as_view(),
+    #    name='articles_list'
+    #),
+    re_path(
+        r'^publications/',
+        include('publications.urls', namespace='publications')
+    ),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path(
         '',

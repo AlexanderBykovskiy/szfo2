@@ -6,7 +6,7 @@ from szfo.common_models import SEOModel
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
-# Модель статичных страниц
+# Модель новостей
 class NewsModel(SEOModel):
     header = models.CharField(
         max_length=255,
