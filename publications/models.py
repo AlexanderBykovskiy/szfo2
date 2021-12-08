@@ -44,8 +44,8 @@ class ArticlesModel(SEOModel):
     def __str__(self):
         return self.header
 
-    #def get_absolute_url(self):
-    #    return reverse('publications:', kwargs={'slug': self.slug})
+    def get_absolute_url(self):
+        return reverse('article_item', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Статья'
@@ -83,7 +83,7 @@ class PublicationsModel(SEOModel):
         return self.header
 
     #def get_absolute_url(self):
-    #    return reverse('publications:', kwargs={'slug': self.slug})
+    #    return reverse('publications:article_item', kwargs={'slug': self.slug})
 
     @admin.display(description='Ссылка на источник')
     def source_link(self):

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+{% load static_pages_tags %}
+
+
+{% block seo %}
+	<title>{{ page_object.header }}</title>
+{% endblock %}
+
+{% block body %}
+
+	{% main_menu_block page_object.id %}
+
+	{% page_title_block page_object.header %}
+
+	<div class="page-container">
+
+		<section class="article-content">
+			<div>
+				<img src="{{ article_item.cover|thumbnail_url:'publication-xl' }}" alt="{{ page_object.header }}">
+			</div>
+			{% autoescape off %}
+				{{ article_item.content }}
+			{% endautoescape %}
+			{{ article_item.author }}
+			{{ article_item.publication_date }}
+		</section>
+
+	</div>
+
+{% endblock %}
