@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.urls import re_path, path, include
 from szfo.common_views import pageNotFound
 from news.views import NewsList
-from publications.views import ArticlesList, ArticlesItem
+from publications.views import ArticlesList, ArticlesItem, PublicationsList, PublicationsItem
 
 
 urlpatterns = [
@@ -30,6 +30,16 @@ urlpatterns = [
         r'^articles/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)/?$',
         ArticlesItem.as_view(),
         name='article_item'
+    ),
+    re_path(
+        r'^publications/?$',
+        PublicationsList.as_view(),
+        name='publications_list'
+    ),
+    re_path(
+        r'^publications/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)/?$',
+        PublicationsItem.as_view(),
+        name='publication_item'
     ),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path(

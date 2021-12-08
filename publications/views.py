@@ -41,3 +41,41 @@ class ArticlesItem(DetailView):
             'header': self.object.header
         }
         return context
+
+
+class PublicationsList(ListView):
+    model = PublicationsModel
+    paginate_by = 24
+    template_name = 'publications.html'
+    context_object_name = 'publications_list'
+
+    def get_queryset(self):
+        return PublicationsModel.objects.filter(published=True)
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        page_object = get_object_or_404(StaticPageModel, id='publications')
+        context['page_object'] = page_object
+        return context
+
+
+class PublicationsItem(DetailView):
+    model = PublicationsModel
+    template_name = 'publications-item.html'
+    slug_url_kwarg = 'slug'
+    context_object_name = 'publication_item'
+
+    def get_object(self, **kwargs):
+        obj = super().get_object()
+        if obj.published:
+            return obj
+        else:
+            raise Http404('Публикация не найдена')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_object'] = {
+            'id': 'publications',
+            'header': self.object.header
+        }
+        return context
