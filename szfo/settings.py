@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'feedback.apps.FeedbackConfig',
     'news.apps.NewsConfig',
     'publications.apps.PublicationsConfig',
+    'partners.apps.PartnersConfig',
 ]
 
 MIDDLEWARE = [
