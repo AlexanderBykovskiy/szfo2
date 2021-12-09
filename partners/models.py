@@ -20,6 +20,10 @@ class PartnersModel(SEOModel):
         max_length=512,
         verbose_name='Ссылка (URL)',
     )
+    published = models.BooleanField(
+        default=True,
+        verbose_name='Опубликовано',
+    )
 
     def __str__(self):
         return self.header
@@ -29,7 +33,7 @@ class PartnersModel(SEOModel):
 
     @admin.display(description='Ссылка')
     def link(self):
-        return format_html('<a href="{}">Перейти на сайт партнера</a>', self.link_url)
+        return format_html('<a href="{}" target="_blank">Перейти на сайт партнера</a>', self.link_url)
 
     class Meta:
         verbose_name = 'Партнер'

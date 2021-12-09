@@ -87,7 +87,7 @@ class PublicationsModel(SEOModel):
 
     @admin.display(description='Ссылка на источник')
     def source_link(self):
-        return format_html('<a href="{}">Перейти к источнику</a>', self.source_url)
+        return format_html('<a href="{}" target="_blank">Перейти к источнику</a>', self.source_url)
 
     class Meta:
         verbose_name = 'Публикация'
