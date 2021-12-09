@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+{% load static_pages_tags %}
+
+
+{% block seo %}
+	<title>{{ page_object.header }}</title>
+{% endblock %}
+
+{% block body %}
+
+	{% main_menu_block page_object.id %}
+
+	{% page_title_block page_object.header %}
+
+	<div class="page-container">
+
+		{% if page_object.content %}
+			{% autoescape off %}
+				<section class="content">{{ page_object.content }}</section>
+			{% endautoescape %}
+		{% endif %}
+
+		<section>
+			<div class="publication-list">
+				{% for partner_item in partners_list %}
+					<div class="news-item{% if forloop.counter == 1 %} first{% endif %}">
+						<a href="{{ partner_item.get_absolute_url }}">
+							<div>
+								<img src="{{ partner_item.logo|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
+							</div>
+							<div>{{ partner_item.header }}</div>
+							<div>{{ partner_item.link_url }}</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+
+			{% pagination_block paginator page_obj %}
+
+		</section>
+
+	</div>
+
+{% endblock %}

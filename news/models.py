@@ -43,7 +43,7 @@ class NewsModel(SEOModel):
         return self.header
 
     def get_absolute_url(self):
-        return reverse('news:news_item', kwargs={'slug': self.slug})
+        return reverse('news_item', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Новость'

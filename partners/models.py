@@ -28,8 +28,8 @@ class PartnersModel(SEOModel):
     def __str__(self):
         return self.header
 
-    #def get_absolute_url(self):
-    #    return reverse('news:news_item', kwargs={'slug': self.slug})
+    def get_absolute_url(self):
+        return reverse('partner_item', kwargs={'slug': self.slug})
 
     @admin.display(description='Ссылка')
     def link(self):

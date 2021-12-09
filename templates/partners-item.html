@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+{% load static_pages_tags %}
+
+
+{% block seo %}
+	<title>{{ page_object.header }}</title>
+{% endblock %}
+
+{% block body %}
+
+	{% main_menu_block page_object.id %}
+
+	{% page_title_block page_object.header %}
+
+	<div class="page-container">
+
+		<section class="publication-content">
+			<div>
+				<img src="{{ partner_item.logo|thumbnail_url:'publication-xl' }}" alt="{{ page_object.header }}">
+			</div>
+			<a href="{{ partner_item.link_url }}" target="_blank">{{ publication_item.source }}</a>
+		</section>
+
+	</div>
+
+{% endblock %}

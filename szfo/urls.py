@@ -3,8 +3,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path, path, include
 from szfo.common_views import pageNotFound
-from news.views import NewsList
+from news.views import NewsList, NewsItem
 from publications.views import ArticlesList, ArticlesItem, PublicationsList, PublicationsItem
+from partners.views import PartnersList, PartnersItem
 
 
 urlpatterns = [
@@ -18,8 +19,9 @@ urlpatterns = [
         name='news_list'
     ),
     re_path(
-        r'^news/',
-        include('news.urls', namespace='news')
+        r'^news/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)/?$',
+        NewsItem.as_view(),
+        name='news_item'
     ),
     re_path(
         r'^articles/?$',
@@ -40,6 +42,16 @@ urlpatterns = [
         r'^publications/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)/?$',
         PublicationsItem.as_view(),
         name='publication_item'
+    ),
+    re_path(
+        r'^partners/?$',
+        PartnersList.as_view(),
+        name='partners_list'
+    ),
+    re_path(
+        r'^partners/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)/?$',
+        PartnersItem.as_view(),
+        name='partner_item'
     ),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path(
