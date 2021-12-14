@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind forms;
 
 /* Forms */
 .form-group {
@@ -55,6 +56,19 @@
     @apply text-white bg-sky-700 hover:bg-sky-800 focus:ring-sky-600
 }
 
+html {
+    @apply min-h-screen
+}
+
+body {
+    @apply min-h-screen flex flex-col gap-y-6
+}
+
+body > .main {
+    @apply flex-grow
+}
+
+
 
 .page-container {
     @apply container mx-auto max-w-screen-xl px-2 md:px-4
@@ -62,6 +76,27 @@
 
 .page-title {
     @apply block text-3xl mt-4 mb-6 text-sky-700
+}
+
+
+body > .bottom {
+    @apply text-gray-200 bg-sky-800 text-sm
+}
+
+body > .bottom > .page-container {
+    @apply grid grid-cols-2 gap-4 md:grid-cols-4 pt-6 pb-10
+}
+
+.footer-menu a, .bottom .data a {
+    @apply hover:underline
+}
+
+.footer-menu .footer-menu-header {
+    @apply uppercase text-white font-medium mb-2
+}
+
+.bottom .data > .contacts {
+    @apply flex flex-col gap-1 mb-4 text-lg text-white
 }
 
 
