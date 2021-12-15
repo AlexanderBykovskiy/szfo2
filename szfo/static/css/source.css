@@ -77,13 +77,27 @@ header #logo > img {
     @apply block w-40 h-20
 }
 
-header > .header-container {
-    @apply container mx-auto max-w-screen-2xl px-4 md:px-8 flex flex-wrap justify-between
+header > .header-container,
+footer > .footer-container
+{
+    @apply container mx-auto max-w-screen-xl px-4 md:px-8 flex flex-wrap justify-between
 }
 
 
+header > .header-container {
+     @apply flex
+}
+
 header > .header-container > .first {
-    @apply flex gap-x-6 gap-y-4 items-center
+    @apply flex gap-x-6 gap-y-4 lg:items-center justify-between flex-grow lg:flex-grow-0
+}
+
+#mobil_menu_button_wrapper {
+    @apply lg:hidden
+}
+
+#main_menu {
+    @apply hidden lg:block
 }
 
 #main_menu > ul {
@@ -100,7 +114,7 @@ header > .header-container > .first {
 
 
 .page-container {
-    @apply container mx-auto max-w-screen-xl px-4 md:px-8
+    @apply container mx-auto max-w-screen-xl px-4 md:px-8 lg:px-56
 }
 
 .page-title {
@@ -154,4 +168,13 @@ body > .bottom > .page-container {
 
 .data-block > .phone {
     @apply mt-6
+}
+
+
+.top-content {
+    @apply flex flex-col md:flex-row justify-between items-center mb-6 text-gray-400
+}
+
+.cover-image {
+    @apply mb-7
 }
