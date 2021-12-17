@@ -23,13 +23,20 @@
 		<section>
 			<div class="article-list">
 				{% for article_item in articles_list %}
-					<div class="news-item{% if forloop.counter == 1 %} first{% endif %}">
+					<div class="article-item{% if forloop.counter == 1 %} first{% endif %}">
 						<a href="{{ article_item.get_absolute_url }}">
 							<div>
 								<img src="{{ article_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
 							</div>
-							<div>{{ article_item.header }}</div>
-							<div>{{ article_item.short_content }}</div>
+							<div class="text">
+								<span class="published-date">
+									{{ article_item.publication_date }}
+								</span>
+								<span class="title">
+									{{ article_item.header }}
+								</span>
+
+							</div>
 						</a>
 					</div>
 				{% endfor %}

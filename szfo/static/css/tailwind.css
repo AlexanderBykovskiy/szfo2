@@ -1125,6 +1125,60 @@ body > .bottom > .footer-container {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+.article-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.article-list > .article-item {
+  overflow: hidden;
+  border-width: 1px;
+}
+
+.article-list > .article-item > a {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .article-list > .article-item > a {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.article-list > .article-item .text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .article-list > .article-item .text {
+    grid-column: span 2 / span 2;
+  }
+
+  .article-list > .article-item .text {
+    padding-left: 0px;
+  }
+}
+
+.article-list > .article-item .text .published-date {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.article-list > .article-item .text .title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));

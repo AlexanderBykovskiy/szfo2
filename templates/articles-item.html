@@ -15,14 +15,30 @@
 	<div class="page-container">
 
 		<section class="article-content">
-			<div>
-				<img src="{{ article_item.cover|thumbnail_url:'publication-xl' }}" alt="{{ page_object.header }}">
+
+			<div class="top-content">
+				<span class="published_date">
+					{{ article_item.publication_date }}
+				</span>
+				{% include "includes/share.html" %}
 			</div>
-			{% autoescape off %}
-				{{ article_item.content }}
-			{% endautoescape %}
-			{{ article_item.author }}
-			{{ article_item.publication_date }}
+
+			<div class="cover-image">
+				<img src="{{ article_item.cover|thumbnail_url:'publication-lg' }}" alt="{{ page_object.header }}">
+			</div>
+
+			<div class="content">
+				{% autoescape off %}
+					{{ article_item.content }}
+				{% endautoescape %}
+			</div>
+
+			{% if article_item.author %}
+				<div class="author">
+					{{ article_item.author }}
+				</div>
+			{% endif %}
+
 		</section>
 
 	</div>

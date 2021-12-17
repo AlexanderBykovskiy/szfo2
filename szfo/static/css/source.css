@@ -209,3 +209,29 @@ body > .bottom > .footer-container {
 .author {
     @apply text-gray-400 text-lg mt-6
 }
+
+
+.article-list {
+    @apply flex flex-col gap-y-10
+}
+
+
+.article-list > .article-item {
+    @apply border overflow-hidden
+}
+
+.article-list > .article-item > a {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-x-12
+}
+
+.article-list > .article-item .text {
+    @apply flex flex-col gap-y-2 md:col-span-2 px-6 py-4 md:pl-0
+}
+
+.article-list > .article-item .text .published-date {
+    @apply text-gray-400
+}
+
+.article-list > .article-item .text .title {
+    @apply text-lg
+}

@@ -33,9 +33,11 @@
 				{% endautoescape %}
 			</div>
 
-			<div class="author">
-				{{ news_item.author }}
-			</div>
+			{% if news_item.author %}
+				<div class="author">
+					{{ news_item.author }}
+				</div>
+			{% endif %}
 
 		</section>
 
