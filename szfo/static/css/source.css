@@ -21,11 +21,13 @@
 
 
 .form-group input[type='text'],
+.form-group input[type='email'],
 .form-group textarea
 {
     @apply border rounded-md outline-none py-1.5 px-2 focus:ring-1 focus:ring-sky-700 focus:border-sky-700
 }
 .form-group.error input[type='text'],
+.form-group.error input[type='email'],
 .form-group.error textarea,
 .form-group.error input[type='checkbox']
 {
@@ -123,11 +125,11 @@ header > .header-container > .first {
 
 
 body > .bottom {
-    @apply text-gray-200 bg-sky-900 text-sm md:py-4
+    @apply text-gray-200 bg-sky-900 text-sm py-4 md:py-6
 }
 
-body > .bottom > .page-container {
-    @apply grid grid-cols-2 gap-4 md:grid-cols-4 pt-6 pb-10
+body > .bottom > .footer-container {
+    @apply grid grid-cols-2 gap-6 md:grid-cols-4 pt-6 pb-10
 }
 
 .footer-menu a, .bottom .data a {
@@ -158,16 +160,15 @@ body > .bottom > .page-container {
     @apply flex
 }
 
-
-.data-block > .phone,
-.data-block > .address,
-.data-block > .email,
-.data-block > .telegram {
-    @apply text-xl
+.contacts-content {
+     @apply flex flex-col gap-y-4
 }
 
-.data-block > .phone {
-    @apply mt-6
+.contacts-content .data-block > .phone,
+.contacts-content .data-block > .address,
+.contacts-content .data-block > .email,
+.contacts-content .data-block > .telegram {
+    @apply text-xl
 }
 
 
@@ -177,4 +178,12 @@ body > .bottom > .page-container {
 
 .cover-image {
     @apply mb-7
+}
+
+.content p {
+    @apply mb-4
+}
+
+.author {
+    @apply text-gray-400 text-lg mt-6
 }

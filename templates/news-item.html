@@ -20,19 +20,22 @@
 				<span class="published_date">
 					{{ news_item.publication_date }}
 				</span>
-				<div class="share-to">
-					<script src="https://yastatic.net/share2/share.js"></script>
-					<div class="ya-share2" data-curtain data-shape="round" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp"></div>
-				</div>
+				{% include "includes/share.html" %}
 			</div>
 
 			<div class="cover-image">
 				<img src="{{ news_item.cover|thumbnail_url:'publication-lg' }}" alt="{{ page_object.header }}">
 			</div>
-			{% autoescape off %}
-				{{ news_item.content }}
-			{% endautoescape %}
-			{{ news_item.author }}
+
+			<div class="content">
+				{% autoescape off %}
+					{{ news_item.content }}
+				{% endautoescape %}
+			</div>
+
+			<div class="author">
+				{{ news_item.author }}
+			</div>
 
 		</section>
 

@@ -4,7 +4,7 @@ from .models import *
 
 @admin.register(StaticPageModel)
 class StaticPageAdmin(admin.ModelAdmin):
-    list_display = ('id', 'header', 'changed_date', 'created_date',)
+    list_display = ('header', 'id', 'changed_date', 'created_date',)
     ordering = ['header']
     search_fields = ['header']
     list_display_links = ('header',)

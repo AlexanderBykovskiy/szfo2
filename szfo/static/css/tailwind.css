@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.5 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.6 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -444,8 +444,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.5rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .block {
@@ -544,11 +544,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(240 253 244 / var(--tw-bg-opacity));
 }
 
-.bg-gray-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -562,6 +557,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pb-6 {
@@ -628,7 +633,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-wrap: wrap;
 }
 
-.form-group input[type='text'], .form-group textarea {
+.form-group input[type='text'], .form-group input[type='email'], .form-group textarea {
   border-radius: 0.375rem;
   border-width: 1px;
   padding-top: 0.375rem;
@@ -639,7 +644,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline-offset: 2px;
 }
 
-.form-group input[type='text']:focus, .form-group textarea:focus {
+.form-group input[type='text']:focus, .form-group input[type='email']:focus, .form-group textarea:focus {
   --tw-border-opacity: 1;
   border-color: rgb(3 105 161 / var(--tw-border-opacity));
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -649,12 +654,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-ring-color: rgb(3 105 161 / var(--tw-ring-opacity));
 }
 
-.form-group.error input[type='text'], .form-group.error textarea, .form-group.error input[type='checkbox'] {
+.form-group.error input[type='text'], .form-group.error input[type='email'], .form-group.error textarea, .form-group.error input[type='checkbox'] {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
 }
 
-.form-group.error input[type='text']:focus, .form-group.error textarea:focus, .form-group.error input[type='checkbox']:focus {
+.form-group.error input[type='text']:focus, .form-group.error input[type='email']:focus, .form-group.error textarea:focus, .form-group.error input[type='checkbox']:focus {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
   --tw-ring-opacity: 1;
@@ -951,6 +956,8 @@ header > .header-container > .first {
 body > .bottom {
   --tw-bg-opacity: 1;
   background-color: rgb(12 74 110 / var(--tw-bg-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
@@ -959,21 +966,21 @@ body > .bottom {
 
 @media (min-width: 768px) {
   body > .bottom {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 }
 
-body > .bottom > .page-container {
+body > .bottom > .footer-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 2.5rem;
 }
 
 @media (min-width: 768px) {
-  body > .bottom > .page-container {
+  body > .bottom > .footer-container {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
@@ -1038,13 +1045,15 @@ body > .bottom > .page-container {
   display: flex;
 }
 
-.data-block > .phone, .data-block > .address, .data-block > .email, .data-block > .telegram {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.contacts-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
 
-.data-block > .phone {
-  margin-top: 1.5rem;
+.contacts-content .data-block > .phone, .contacts-content .data-block > .address, .contacts-content .data-block > .email, .contacts-content .data-block > .telegram {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .top-content {
@@ -1065,6 +1074,18 @@ body > .bottom > .page-container {
 
 .cover-image {
   margin-bottom: 1.75rem;
+}
+
+.content p {
+  margin-bottom: 1rem;
+}
+
+.author {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .hover\:bg-gray-50:hover {
@@ -1092,42 +1113,8 @@ body > .bottom > .page-container {
   --tw-ring-offset-width: 2px;
 }
 
-@media (min-width: 640px) {
-  .sm\:px-6 {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .sm\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-}
-
 @media (min-width: 768px) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .md\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .md\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:px-14 {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-  }
-
-  .lg\:py-6 {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
   }
 }

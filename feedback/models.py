@@ -13,8 +13,7 @@ class FeedbackModel(CommonModel):
         max_length=12,
         verbose_name='Номер телефона',
     )
-    email = models.CharField(
-        max_length=100,
+    email = models.EmailField(
         verbose_name='Email',
         blank=True,
         null=True,
@@ -28,6 +27,7 @@ class FeedbackModel(CommonModel):
     )
     accept_processing = models.BooleanField(
         default=False,
+        blank=False,
         verbose_name='ФЗ-152',
     )
 

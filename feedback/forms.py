@@ -11,7 +11,8 @@ class FeedbackForm(forms.ModelForm):
         model = FeedbackModel
         fields = ['name', 'phone_number', 'email', 'message', 'accept_processing']
         widgets = {
-            'message': forms.Textarea(attrs={'rows': 3})
+            'message': forms.Textarea(attrs={'rows': 3}),
+            'accept_processing': forms.CheckboxInput(attrs={'required': True})
         }
 
     def clean_phone_number(self):
