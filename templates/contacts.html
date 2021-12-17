@@ -40,7 +40,7 @@
 					</div>
 				</div>
 			{% else %}
-				<div class="rounded-xl border px-8 py-4">
+				<div class="rounded-md border px-8 py-4">
 					<div class="text-center text-2xl mt-2 mb-4">Заказать исследование</div>
 					<form action="/{{ page_object.slug }}/" method="post" class="feedback-form">
 						{% csrf_token %}

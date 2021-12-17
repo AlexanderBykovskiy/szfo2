@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static_pages_tags %}
+
+
+{% block seo %}
+	<title>{{ page_object.header }}</title>
+{% endblock %}
+
+{% block body %}
+
+	<div id="slider" class="page-container">
+		slider
+	</div>
+
+	<div class="page-container">
+
+		О нас
+
+		{% autoescape off %}
+			<section class="content">{{ page_object.content }}</section>
+		{% endautoescape %}
+
+	</div>
+
+	<div id="services" class="page-container">
+		{% data_block 'services' %}
+	</div>
+
+	<div id="news" class="page-container">
+		news
+	</div>
+
+	<div id="partners" class="page-container">
+		partners
+	</div>
+
+{% endblock %}

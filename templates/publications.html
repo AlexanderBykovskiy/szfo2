@@ -21,15 +21,17 @@
 		{% endif %}
 
 		<section>
-			<div class="publication-list">
+			<span class="publication-list">
 				{% for publication_item in publications_list %}
-					<div class="news-item{% if forloop.counter == 1 %} first{% endif %}">
-						<a href="{{ publication_item.get_absolute_url }}">
+					<span class="publication-item{% if forloop.counter == 1 %} first{% endif %}">
+						<a href="{{ publication_item.source_url }}" target="_blank">
 							<div>
 								<img src="{{ publication_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
 							</div>
-							<div>{{ publication_item.header }}</div>
-							<div>{{ publication_item.short_content }}</div>
+							<span class="text">
+								<span class="published-date">{{ publication_item.publication_date }}</span>
+								<span class="title">{{ publication_item.header }}</span>
+							</span>
 						</a>
 					</div>
 				{% endfor %}

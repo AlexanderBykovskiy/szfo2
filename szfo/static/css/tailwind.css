@@ -607,6 +607,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 @tailwind forms;
 
 /* Forms */
@@ -1177,6 +1183,69 @@ body > .bottom > .footer-container {
 .article-list > .article-item .text .title {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.publication-list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .publication-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .publication-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .publication-list {
+    gap: 2rem;
+  }
+}
+
+.publication-list  > .publication-item {
+  overflow: hidden;
+  border-width: 1px;
+}
+
+.publication-list > .publication-item > a {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.publication-list  > .publication-item .text {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  row-gap: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.publication-list  > .publication-item:hover .text {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.publication-list  > .publication-item .text .published-date {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.publication-list  > .publication-item .text .title {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .hover\:bg-gray-50:hover {

@@ -12,6 +12,9 @@ class StaticPageModel(SEOModel):
         unique=True,
         primary_key=True,
         verbose_name='ID страницы',
+        help_text="Зарезервированные id страниц (обязательно должны присутствовать): index - главная страница; \
+            news - список новостей; articles - список статей; publications - список публикаций; services - услуги; \
+            about - о нас; partners - партнеры; contacts - контакты.",
     )
     header = models.CharField(
         max_length=255,

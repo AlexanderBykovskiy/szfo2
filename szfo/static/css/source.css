@@ -235,3 +235,32 @@ body > .bottom > .footer-container {
 .article-list > .article-item .text .title {
     @apply text-lg
 }
+
+
+.publication-list {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8
+}
+
+.publication-list  > .publication-item {
+    @apply border overflow-hidden
+}
+
+.publication-list > .publication-item > a {
+    @apply flex flex-col h-full
+}
+
+.publication-list  > .publication-item .text {
+    @apply px-4 py-2 flex flex-col gap-y-1 flex-grow
+}
+
+.publication-list  > .publication-item:hover .text {
+    @apply bg-gray-50
+}
+
+.publication-list  > .publication-item .text .published-date {
+    @apply text-sm text-gray-400
+}
+
+.publication-list  > .publication-item .text .title {
+    @apply flex-grow flex justify-center items-center
+}

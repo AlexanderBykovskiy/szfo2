@@ -58,24 +58,23 @@ class PublicationsList(ListView):
         context['page_object'] = page_object
         return context
 
+# class PublicationsItem(DetailView):
+#    model = PublicationsModel
+#    template_name = 'publications-item.html'
+#    slug_url_kwarg = 'slug'
+#    context_object_name = 'publication_item'
 
-class PublicationsItem(DetailView):
-    model = PublicationsModel
-    template_name = 'publications-item.html'
-    slug_url_kwarg = 'slug'
-    context_object_name = 'publication_item'
+#    def get_object(self, **kwargs):
+#        obj = super().get_object()
+#        if obj.published:
+#            return obj
+#        else:
+#            raise Http404('Публикация не найдена')
 
-    def get_object(self, **kwargs):
-        obj = super().get_object()
-        if obj.published:
-            return obj
-        else:
-            raise Http404('Публикация не найдена')
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['page_object'] = {
-            'id': 'publications',
-            'header': self.object.header
-        }
-        return context
+#    def get_context_data(self, *, object_list=None, **kwargs):
+#        context = super().get_context_data(**kwargs)
+#        context['page_object'] = {
+#            'id': 'publications',
+#            'header': self.object.header
+#        }
+#        return context
