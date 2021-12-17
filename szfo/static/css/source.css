@@ -151,9 +151,31 @@ body > .bottom > .footer-container {
 
 
 .news-list {
-    @apply grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4 sm:grid-cols-3 lg:gap-4
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8
 }
 
+.news-list > .news-item {
+    @apply border overflow-hidden
+}
+.news-list > .news-item > a {
+    @apply flex flex-col h-full
+}
+
+.news-list > .news-item .text {
+    @apply px-4 py-2 flex flex-col gap-y-1 flex-grow
+}
+
+.news-list > .news-item:hover .text {
+    @apply bg-gray-50
+}
+
+.news-list > .news-item .text .published-date {
+    @apply text-sm text-gray-400
+}
+
+.news-list > .news-item .text .title {
+    @apply flex-grow flex justify-center items-center
+}
 
 
 .pagination ul {

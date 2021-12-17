@@ -28,8 +28,10 @@
 							<div>
 								<img src="{{ news_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
 							</div>
-							<div>{{ news_item.header }}</div>
-							<div>{{ news_item.short_content }}</div>
+							<div class="text">
+								<span class="published-date">{{ news_item.publication_date }}</span>
+								<span class="title">{{ news_item.header }}</span>
+							</div>
 						</a>
 					</div>
 				{% endfor %}
