@@ -9,30 +9,34 @@
 
 {% block body %}
 
-	<div id="slider" class="page-container">
-		slider
-	</div>
+	<section>
 
-	<div class="page-container">
+		<div id="slider" class="page-container">
+			slider
+		</div>
 
-		О нас
+		<div class="page-container">
 
-		{% autoescape off %}
-			<section class="content">{{ page_object.content }}</section>
-		{% endautoescape %}
+			О нас
 
-	</div>
+			{% autoescape off %}
+				<div class="content">{{ page_object.content }}</div>
+			{% endautoescape %}
 
-	<div id="services" class="page-container">
-		{% data_block 'services' %}
-	</div>
+		</div>
 
-	<div id="news" class="page-container">
-		news
-	</div>
+		<div id="services" class="page-container">
+			{% data_block 'services' %}
+		</div>
 
-	<div id="partners" class="page-container">
-		partners
-	</div>
+		<div id="news" class="page-container">
+			news
+		</div>
+
+		<div id="partners" class="page-container">
+			partners
+		</div>
+
+	</section>
 
 {% endblock %}

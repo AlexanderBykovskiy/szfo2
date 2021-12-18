@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -452,20 +452,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }
 
-.inline {
-  display: inline;
-}
-
 .flex {
   display: flex;
 }
 
 .inline-flex {
   display: inline-flex;
-}
-
-.table {
-  display: table;
 }
 
 .grid {
@@ -604,12 +596,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1246,6 +1232,51 @@ body > .bottom > .footer-container {
   flex-grow: 1;
   align-items: center;
   justify-content: center;
+}
+
+#services {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#services > .data-block {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  row-gap: 1.5rem;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+
+@media (min-width: 640px) {
+  #services > .data-block {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+#services .service-item {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+
+#services .service-item .icon svg {
+  --tw-text-opacity: 1;
+  color: rgb(101 163 13 / var(--tw-text-opacity));
+}
+
+#services .service-item .text {
+  grid-column: span 3 / span 3;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(3 105 161 / var(--tw-text-opacity));
+}
+
+#services .service-item .text:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .hover\:bg-gray-50:hover {

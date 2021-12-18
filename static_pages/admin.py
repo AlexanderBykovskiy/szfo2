@@ -26,6 +26,6 @@ class StaticPageAdmin(admin.ModelAdmin):
 
 @admin.register(ContentBlockModel)
 class ContentBlockAdmin(admin.ModelAdmin):
-    list_display = ('id', 'label',)
+    list_display = ('label', 'id',)
     ordering = ['label']
     list_display_links = ('label',)

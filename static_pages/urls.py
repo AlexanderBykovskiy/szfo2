@@ -1,5 +1,6 @@
-from django.urls import re_path
+from django.urls import path, re_path
 from .views import *
+from static_pages.views import index_page_view
 
 app_name = 'static_pages'
 
@@ -8,5 +9,10 @@ urlpatterns = [
         r'^(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*/?$)',
         static_page_view,
         name='static_page'
+    ),
+    path(
+        '',
+        index_page_view,
+        name='index'
     ),
 ]

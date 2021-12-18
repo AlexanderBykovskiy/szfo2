@@ -6,18 +6,12 @@ from szfo.common_views import pageNotFound
 from news.views import NewsList, NewsItem
 from publications.views import ArticlesList, ArticlesItem, PublicationsList #PublicationsItem
 from partners.views import PartnersList, PartnersItem
-from static_pages.views import index_page_view
 
 
 urlpatterns = [
     re_path(
         r'^admin/?',
         admin.site.urls
-    ),
-    re_path(
-        r'^/?$',
-        index_page_view,
-        name='index'
     ),
     re_path(
         r'^news/?$',

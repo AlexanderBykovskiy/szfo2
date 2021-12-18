@@ -264,3 +264,25 @@ body > .bottom > .footer-container {
 .publication-list  > .publication-item .text .title {
     @apply flex-grow flex justify-center items-center
 }
+
+
+
+#services {
+    @apply my-12
+}
+
+#services > .data-block {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-16
+}
+
+#services .service-item {
+    @apply grid grid-cols-4 gap-x-6 items-center
+}
+
+#services .service-item .icon svg {
+    @apply text-lime-600
+}
+
+#services .service-item .text {
+    @apply col-span-3 text-xl hover:underline text-sky-700
+}
