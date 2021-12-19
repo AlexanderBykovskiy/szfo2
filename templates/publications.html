@@ -21,9 +21,9 @@
 		{% endif %}
 
 		<section>
-			<span class="publication-list">
+			<div class="publication-list">
 				{% for publication_item in publications_list %}
-					<span class="publication-item{% if forloop.counter == 1 %} first{% endif %}">
+					<div class="publication-item{% if forloop.counter == 1 %} first{% endif %}">
 						<a href="{{ publication_item.source_url }}" target="_blank">
 							<div>
 								<img src="{{ publication_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
