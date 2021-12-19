@@ -761,7 +761,7 @@ header {
   padding-bottom: 1.5rem;
 }
 
-header #logo > img {
+header #logo > a > img {
   display: block;
   height: 5rem;
   width: 10rem;

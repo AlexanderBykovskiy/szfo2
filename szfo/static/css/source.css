@@ -80,7 +80,7 @@ header {
     @apply bg-white mb-8 py-6
 }
 
-header #logo > img {
+header #logo > a > img {
     @apply block w-40 h-20
 }
 

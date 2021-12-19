@@ -19,7 +19,7 @@
 			<div class="header-container">
 				<div class="first">
 					<div id="logo">
-						<img src="{% static '/images/logo.svg' %}" alt="logo">
+						<a href="/"><img src="{% static '/images/logo.svg' %}" alt="logo"></a>
 					</div>
 					{% block main_menu %}{% main_menu_block page_object.id %}{% endblock %}
 					<div id="mobil_menu_button_wrapper">
