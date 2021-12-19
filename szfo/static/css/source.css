@@ -58,6 +58,11 @@
     @apply text-white bg-sky-700 hover:bg-sky-800 focus:ring-sky-600
 }
 
+.button-s {
+    @apply border-gray-200
+}
+
+
 html {
     @apply min-h-screen
 }
@@ -315,4 +320,54 @@ body > .bottom > .footer-container {
 
 #services .service-item .text {
     @apply col-span-3 text-xl hover:underline text-sky-700
+}
+
+
+
+#front-text {
+     @apply my-12
+}
+
+#front-text .front-page-title {
+     @apply text-2xl text-sky-600 mb-4
+}
+
+
+#news {
+   @apply my-12
+}
+
+.news-front {
+    @apply flex flex-col gap-y-8
+}
+
+.news-front .news-header {
+    @apply text-2xl text-sky-600
+}
+
+
+.news-front .button {
+    @apply text-center
+}
+
+.news-front .button > a {
+    @apply text-center
+}
+
+
+
+#partners {
+   @apply my-12
+}
+
+.partners-front {
+    @apply flex flex-col gap-y-8
+}
+
+.partners-front .partners-header {
+    @apply text-2xl text-sky-600
+}
+
+.partners-front .partners-list{
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6
 }

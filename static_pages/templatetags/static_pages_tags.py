@@ -1,5 +1,7 @@
 from django import template
 from static_pages.models import *
+from news.models import NewsModel
+from partners.models import PartnersModel
 
 
 register = template.Library()
@@ -38,4 +40,20 @@ def pagination_block(paginator, page_obj):
     return {
         'paginator': paginator,
         'page_obj': page_obj,
+    }
+
+
+@register.inclusion_tag('static_pages/news_front_block.html')
+def news_front_block():
+    last_news_list = NewsModel.objects.all()[:6]
+    return {
+        'last_news_list': last_news_list,
+    }
+
+
+@register.inclusion_tag('static_pages/partners_front_block.html')
+def partners_front_block():
+    partners_list = PartnersModel.objects.all()[:4]
+    return {
+        'partners_list': partners_list,
     }

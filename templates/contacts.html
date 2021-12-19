@@ -40,9 +40,9 @@
 					</div>
 				</div>
 			{% else %}
-				<div class="rounded-md border px-8 py-4">
+				<div class="hidden rounded-md border px-8 py-4">
 					<div class="text-center text-2xl mt-2 mb-4">Заказать исследование</div>
-					<form action="/{{ page_object.slug }}/" method="post" class="feedback-form">
+					<form action="/{{ page_object.slug }}" method="post" class="feedback-form">
 						{% csrf_token %}
 						<div class="form-group input-group-v{% if feedback_form.name.errors %} error{% endif %}">
 							<label for="{{ feedback_form.name.id_for_label }}">Фамилия и имя</label>

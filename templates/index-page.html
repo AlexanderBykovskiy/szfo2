@@ -11,13 +11,13 @@
 
 	<section>
 
-		<div id="slider" class="page-container">
+		<div id="slider" class="hidden page-container">
 			slider
 		</div>
 
-		<div class="page-container">
+		<div id="front-text" class="page-container">
 
-			О нас
+			<h1 class="front-page-title">О нас</h1>
 
 			{% autoescape off %}
 				<div class="content">{{ page_object.content }}</div>
@@ -30,11 +30,11 @@
 		</div>
 
 		<div id="news" class="page-container">
-			news
+			{% news_front_block %}
 		</div>
 
 		<div id="partners" class="page-container">
-			partners
+			{% partners_front_block %}
 		</div>
 
 	</section>

@@ -1,0 +1,16 @@
+{% load thumbnail %}
+
+{% if partners_list %}
+	<div class="partners-front">
+		<h2 class="partners-header">Партнеры</h2>
+		<div class="partners-list">
+			{% for partners_item in partners_list %}
+				<a href="{{ partners_item.get_absolute_url }}" class="news-item">
+					<div>
+						<img src="{{ partners_item.logo|thumbnail_url:'publication-xxs' }}" alt="{{ partners_item.header }}">
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}
