@@ -21,15 +21,17 @@
 		{% endif %}
 
 		<section>
-			<div class="publication-list">
+			<div class="partner-list">
 				{% for partner_item in partners_list %}
-					<div class="news-item{% if forloop.counter == 1 %} first{% endif %}">
+					<div class="partner-item{% if forloop.counter == 1 %} first{% endif %}">
 						<a href="{{ partner_item.get_absolute_url }}">
 							<div>
 								<img src="{{ partner_item.logo|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
 							</div>
-							<div>{{ partner_item.header }}</div>
-							<div>{{ partner_item.link_url }}</div>
+							<div class="text">
+								<span class="title">{{ partner_item.header }}</span>
+								<span class="link">{{ partner_item.link_url }}</span>
+							</div>
 						</a>
 					</div>
 				{% endfor %}

@@ -267,6 +267,36 @@ body > .bottom > .footer-container {
 
 
 
+
+.partner-list {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8
+}
+
+.partner-list  > .partner-item {
+    @apply border overflow-hidden
+}
+
+.partner-list > .partner-item > a {
+    @apply flex flex-col h-full
+}
+
+.partner-list  > .partner-item .text {
+    @apply px-4 py-2 flex flex-col gap-y-1 flex-grow
+}
+
+.partner-list  > .partner-item:hover .text {
+    @apply bg-gray-50
+}
+
+.partner-list  > .partner-item .text .link {
+    @apply text-sm text-gray-400
+}
+
+.partner-list  > .partner-item .text .title {
+    @apply flex-grow flex justify-center items-center
+}
+
+
 #services {
     @apply my-12
 }
