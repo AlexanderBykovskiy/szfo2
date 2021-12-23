@@ -1426,6 +1426,94 @@ body > .bottom > .footer-container {
   }
 }
 
+#float_telegram {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+@media (min-width: 768px) {
+  #float_telegram {
+    bottom: 4rem;
+  }
+
+  #float_telegram {
+    left: 4rem;
+  }
+
+  #float_telegram {
+    height: 5rem;
+  }
+
+  #float_telegram {
+    width: 5rem;
+  }
+}
+
+#float_telegram .ping {
+  position: absolute;
+  display: inline-flex;
+  height: 4rem;
+  width: 4rem;
+}
+
+@-webkit-keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+#float_telegram .ping {
+  -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+  opacity: 0.75;
+}
+
+@media (min-width: 768px) {
+  #float_telegram .ping {
+    height: 5rem;
+  }
+
+  #float_telegram .ping {
+    width: 5rem;
+  }
+}
+
+#float_telegram a {
+  position: absolute;
+  display: block;
+  height: 4rem;
+  width: 4rem;
+}
+
+@media (min-width: 768px) {
+  #float_telegram a {
+    height: 5rem;
+  }
+
+  #float_telegram a {
+    width: 5rem;
+  }
+}
+
+#float_telegram .icon {
+  height: 100%;
+  width: 100%;
+}
+
 .hover\:bg-gray-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));

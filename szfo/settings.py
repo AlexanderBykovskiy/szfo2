@@ -167,7 +167,7 @@ CKEDITOR_CONFIGS = {
             'sourcedialog',
             'uploadwidget',
         ]),
-        'extraAllowedContent': 'span; nav; svg; path; *[*]; *(*);',
+        'extraAllowedContent': 'span; nav; svg; path; g; style; stop; linearGradient; circle; *[*]; *(*);',
     }
 }
 

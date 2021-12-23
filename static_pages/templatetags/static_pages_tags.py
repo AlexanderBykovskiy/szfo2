@@ -32,7 +32,7 @@ def data_block(block_id):
         data = ContentBlockModel.objects.get(id=block_id).content
     except ContentBlockModel.DoesNotExist:
         data = None
-    return {'data_block': data}
+    return {'data_block': data, 'block_id': block_id}
 
 
 @register.inclusion_tag('static_pages/pagination.html')

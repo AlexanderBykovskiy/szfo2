@@ -371,3 +371,19 @@ body > .bottom > .footer-container {
 .partners-front .partners-list{
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6
 }
+
+#float_telegram {
+    @apply fixed w-16 h-16 md:w-20 md:h-20 bottom-6 left-6 md:bottom-16 md:left-16
+}
+
+#float_telegram .ping {
+    @apply animate-ping absolute inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full bg-sky-400 opacity-75
+}
+
+#float_telegram a {
+    @apply absolute block w-16 h-16 md:w-20 md:h-20
+}
+
+#float_telegram .icon {
+    @apply w-full h-full
+}
