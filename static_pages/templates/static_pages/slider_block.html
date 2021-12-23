@@ -1,0 +1,38 @@
+{% load thumbnail %}
+
+{% if slider_list %}
+
+	<div class="slider">
+
+		<div class="slider__wrapper">
+		    <div class="slider__items">
+
+			    {% for slide in slider_list %}
+					<div class="slider__item">
+						<div class="content">
+
+							<img
+								src="{{ slide.cover|thumbnail_url:'publication-lg-long' }}"
+							    alt="{{ slide.header }}"
+								sizes="(max-width: 640px) 640px, (max-width: 1920px) 1024px"
+								srcset="
+									{{ slide.cover|thumbnail_url:'publication-sm' }} 640w,
+									{{ slide.cover|thumbnail_url:'publication-lg-long' }} 1024w
+								"
+							/>
+							<div class="text">
+								{{ slide.header }}
+							</div>
+						</div>
+		            </div>
+				{% endfor %}
+
+		    </div>
+	  </div>
+
+	  <a class="slider__control slider__control_prev" href="#" role="button" data-slide="prev"></a>
+	  <a class="slider__control slider__control_next" href="#" role="button" data-slide="next"></a>
+
+	</div>
+
+{% endif %}

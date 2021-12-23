@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
+{% load static %}
 {% load static_pages_tags %}
 
+
+{% block css %}
+	<link type="text/css" href="{% static '/css/slider.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block js-header %}
+	<script defer src="{% static '/js/slider.min.js' %}"></script>
+	<script defer src="{% static '/js/scripts-frontpage.js' %}"></script>
+{% endblock %}
 
 {% block seo %}
 	<title>{{ page_object.header }}</title>
@@ -11,8 +21,8 @@
 
 	<section>
 
-		<div id="slider" class="hidden page-container">
-			slider
+		<div id="slider" class="page-container">
+			{% slider_block %}
 		</div>
 
 		<div id="front-text" class="page-container">

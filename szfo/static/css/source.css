@@ -387,3 +387,7 @@ body > .bottom > .footer-container {
 #float_telegram .icon {
     @apply w-full h-full
 }
+
+.slider .text {
+    @apply hidden sm:block absolute bottom-10 w-full py-2 px-6 bg-gray-900/40 md:text-2xl sm:text-xl   text-white
+}

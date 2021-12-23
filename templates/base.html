@@ -7,13 +7,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	{% block css %}
-		<link type="text/css" href="{% static '/css/tailwind.css' %}" rel="stylesheet">
-	{% endblock %}
 
-	{% block js-header %}
+	<link type="text/css" href="{% static '/css/tailwind.css' %}" rel="stylesheet">
 
-	{% endblock %}
+	{% block css %}{% endblock %}
+
+	{% block js-header %}{% endblock %}
 
 	{% block seo %}
 		<title>SZFO</title>
@@ -63,8 +62,6 @@
 
 	{% data_block 'float_telegram' %}
 
-	{% block js-footer %}
-
-	{% endblock %}
+	{% block js-footer %}{% endblock %}
 </body>
 </html>

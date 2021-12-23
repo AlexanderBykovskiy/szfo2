@@ -57,3 +57,12 @@ def partners_front_block():
     return {
         'partners_list': partners_list,
     }
+
+
+@register.inclusion_tag('static_pages/slider_block.html')
+def slider_block():
+    slider_list = NewsModel.objects.all()[:4]
+    if slider_list:
+        return {'slider_list': slider_list}
+    else:
+        return {'slider_list': None}
