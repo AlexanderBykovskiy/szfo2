@@ -9,7 +9,7 @@
 
 			    {% for slide in slider_list %}
 					<div class="slider__item">
-						<div class="content">
+						<a class="content" href="{{ slide.get_absolute_url }}">
 
 							<img
 								src="{{ slide.cover|thumbnail_url:'publication-lg-long' }}"
@@ -23,7 +23,7 @@
 							<div class="text">
 								{{ slide.header }}
 							</div>
-						</div>
+						</a>
 		            </div>
 				{% endfor %}
 
