@@ -1,0 +1,28 @@
+<div id="mobil_menu_container" class="hide">
+	<nav id="main_mobil_menu">
+
+		<ul>
+			{% for main_menu_item in main_menu_list %}
+				<li>
+					<a
+						href="{{ main_menu_item.page.get_absolute_url }}"
+						class="main-menu-item{% if main_menu_item.page.id == active_page_id %} active{% endif %}">{{ main_menu_item.label }} {{ main_menu_item.slug }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+	</nav>
+
+	<button
+			id="close_mobil_menu_button"
+			type="button"
+			class="inline-flex items-center px-2 py-2 text-sm font-medium text-gray-700"
+			onclick="hideMobilMenuClickHandler()"
+	>
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+		</svg>
+	</button>
+
+</div>

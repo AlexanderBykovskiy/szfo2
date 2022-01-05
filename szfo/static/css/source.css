@@ -391,3 +391,32 @@ body > .bottom > .footer-container {
 .slider .text {
     @apply hidden sm:block absolute bottom-10 w-full py-2 px-6 bg-gray-900/40 md:text-2xl sm:text-xl   text-white
 }
+
+
+#mobil_menu_container {
+    @apply fixed visible inset-0 flex z-40 bg-white/90 transition-colors
+}
+
+#mobil_menu_container.hide {
+    @apply invisible bg-white/0
+}
+
+#mobil_menu_container #close_mobil_menu_button {
+    @apply absolute right-4 top-4
+}
+
+#mobil_menu_container #main_mobil_menu {
+    @apply bg-white py-6 px-8 text-2xl shadow-lg
+}
+
+#mobil_menu_container #main_mobil_menu ul {
+    @apply flex flex-col divide-y
+}
+
+#mobil_menu_container #main_mobil_menu ul a {
+    @apply block text-sky-700 px-6 py-4
+}
+
+#mobil_menu_container #main_mobil_menu ul a.active {
+    @apply font-medium text-lime-600
+}
