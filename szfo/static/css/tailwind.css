@@ -905,6 +905,11 @@ header > .header-container > .first {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 #main_menu > ul > li > a:hover {
@@ -1018,6 +1023,14 @@ body > .bottom > .footer-container {
   }
 }
 
+.footer-menu a, .bottom .data a {
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .footer-menu a:hover, .bottom .data a:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1073,6 +1086,16 @@ body > .bottom > .footer-container {
 .news-list > .news-item {
   overflow: hidden;
   border-width: 1px;
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.news-list > .news-item:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 189 248 / var(--tw-border-opacity));
 }
 
 .news-list > .news-item > a {
@@ -1096,11 +1119,6 @@ body > .bottom > .footer-container {
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.news-list > .news-item:hover .text {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .news-list > .news-item .text .published-date {
@@ -1179,6 +1197,16 @@ body > .bottom > .footer-container {
 .article-list > .article-item {
   overflow: hidden;
   border-width: 1px;
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.article-list > .article-item:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 189 248 / var(--tw-border-opacity));
 }
 
 .article-list > .article-item > a {
@@ -1255,6 +1283,16 @@ body > .bottom > .footer-container {
 .publication-list  > .publication-item {
   overflow: hidden;
   border-width: 1px;
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.publication-list  > .publication-item:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 189 248 / var(--tw-border-opacity));
 }
 
 .publication-list > .publication-item > a {
@@ -1278,11 +1316,6 @@ body > .bottom > .footer-container {
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.publication-list  > .publication-item:hover .text {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .publication-list  > .publication-item .text .published-date {
@@ -1324,6 +1357,16 @@ body > .bottom > .footer-container {
 .partner-list  > .partner-item {
   overflow: hidden;
   border-width: 1px;
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.partner-list  > .partner-item:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 189 248 / var(--tw-border-opacity));
 }
 
 .partner-list > .partner-item > a {
@@ -1347,11 +1390,6 @@ body > .bottom > .footer-container {
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.partner-list  > .partner-item:hover .text {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .partner-list  > .partner-item .text .link {
