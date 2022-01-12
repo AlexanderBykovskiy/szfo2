@@ -5,15 +5,17 @@
 		<h2 class="news-header">Новости</h2>
 		<div class="news-list">
 			{% for news_item in last_news_list %}
-				<a href="{{ news_item.get_absolute_url }}" class="news-item">
-					<div>
-						<img src="{{ news_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ news_item.header }}">
-					</div>
-					<div class="text">
-						<span class="published-date">{{ news_item.publication_date }}</span>
-						<span class="title">{{ news_item.header }}</span>
-					</div>
-				</a>
+				<div class="news-item{% if forloop.counter == 1 %} first{% endif %}">
+					<a href="{{ news_item.get_absolute_url }}">
+						<div class="cover">
+							<img src="{{ news_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
+						</div>
+						<div class="text">
+							<span class="published-date">{{ news_item.publication_date }}</span>
+							<span class="title">{{ news_item.header }}</span>
+						</div>
+					</a>
+				</div>
 			{% endfor %}
 		</div>
 		<div class="button">
