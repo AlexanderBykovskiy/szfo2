@@ -25,7 +25,7 @@
 				{% for partner_item in partners_list %}
 					<div class="partner-item{% if forloop.counter == 1 %} first{% endif %}">
 						<a href="{{ partner_item.get_absolute_url }}">
-							<div>
+							<div class="cover">
 								<img src="{{ partner_item.logo|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
 							</div>
 							<div class="text">

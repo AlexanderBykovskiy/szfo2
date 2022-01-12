@@ -25,7 +25,7 @@
 				{% for article_item in articles_list %}
 					<div class="article-item{% if forloop.counter == 1 %} first{% endif %}">
 						<a href="{{ article_item.get_absolute_url }}">
-							<div>
+							<div class="cover">
 								<img src="{{ article_item.cover|thumbnail_url:'publication-xxs' }}" alt="{{ page_object.header }}">
 							</div>
 							<div class="text">

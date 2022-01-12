@@ -162,8 +162,13 @@ body > .bottom > .footer-container {
 .news-list > .news-item {
     @apply border overflow-hidden
 }
+
 .news-list > .news-item > a {
     @apply flex flex-col h-full
+}
+
+.news-list > .news-item .cover > img {
+    @apply block w-full h-auto
 }
 
 .news-list > .news-item .text {
@@ -207,6 +212,10 @@ body > .bottom > .footer-container {
     @apply mb-7
 }
 
+.cover-image > img {
+    @apply block w-full h-auto
+}
+
 .content p {
     @apply mb-4
 }
@@ -227,6 +236,10 @@ body > .bottom > .footer-container {
 
 .article-list > .article-item > a {
     @apply grid grid-cols-1 md:grid-cols-3 gap-x-12
+}
+
+.article-list > .article-item .cover > img {
+    @apply block w-full h-auto
 }
 
 .article-list > .article-item .text {
@@ -252,6 +265,10 @@ body > .bottom > .footer-container {
 
 .publication-list > .publication-item > a {
     @apply flex flex-col h-full
+}
+
+.publication-list > .publication-item .cover > img {
+    @apply block w-full h-auto
 }
 
 .publication-list  > .publication-item .text {
@@ -283,6 +300,10 @@ body > .bottom > .footer-container {
 
 .partner-list > .partner-item > a {
     @apply flex flex-col h-full
+}
+
+.partner-list > .partner-item .cover > img {
+    @apply block w-full h-auto
 }
 
 .partner-list  > .partner-item .text {
