@@ -6,11 +6,13 @@
 
 {% block css-header %}
 	<link type="text/css" href="{% static '/css/slider.css' %}" rel="stylesheet">
+	<link type="text/css" href="{% static '/css/carousel-styles.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block js-header %}
 	<script defer src="{% static '/js/slider.min.js' %}"></script>
 	<script defer src="{% static '/js/scripts-frontpage.js' %}"></script>
+	<script src="{% static '/js/carousel-script-min.js' %}"></script>
 {% endblock %}
 
 {% block seo %}
@@ -44,9 +46,13 @@
 		</div>
 
 		<div id="partners" class="page-container">
-			{% partners_front_block %}
+			{% partners_front_block 'partner_carousel' %}
 		</div>
 
 	</section>
 
+{% endblock %}
+
+{% block js-footer %}
+	{% include 'includes/partners.html' %}
 {% endblock %}

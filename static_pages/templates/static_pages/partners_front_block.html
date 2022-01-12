@@ -3,14 +3,33 @@
 {% if partners_list %}
 	<div class="partners-front">
 		<h2 class="partners-header">Партнеры</h2>
-		<div class="partners-list">
-			{% for partners_item in partners_list %}
-				<a href="{{ partners_item.get_absolute_url }}" class="news-item">
-					<div>
-						<img src="{{ partners_item.logo|thumbnail_url:'publication-xxs' }}" alt="{{ partners_item.header }}">
-					</div>
-				</a>
-			{% endfor %}
-		</div>
-	</div>
+
+		<div id="{{ selector }}" class="carousel-container">
+
+            <div class="button previous" onclick="partnerCarousel.previousSlider">&#8249;</div>
+
+			<div class="carousel-wrapper-container">
+	                <div class="carousel-wrapper">
+
+		                {% for partners_item in partners_list %}
+
+			                <div class="carousel-item">
+		                        <div class="item-wrapper">
+			                        <a class="partner-logo-wrapper" href="{{ partners_item.get_absolute_url }}">
+										<img class="partner-logo-img" src="{{ partners_item.logo|thumbnail_url:'carousel-logo' }}" alt="{{ partners_item.header }}">
+			                        </a>
+		                        </div>
+		                    </div>
+
+		                {% endfor %}
+
+	                </div>
+			</div>
+
+			<div class="button next" onclick="partnerCarousel.nextSlider">&#8250;</div>
+
+        </div>
+
+    </div>
+
 {% endif %}

@@ -1,0 +1,86 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+}
+
+.carousel-container > .carousel-wrapper-container {
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.carousel-container > .carousel-wrapper-container > .carousel-wrapper {
+    display: flex;
+    flex-direction: row;
+    overflow-x: visible;
+    left: 0;
+    transition: all 0.7s ease-in-out; /* настройка анимации перелистывания */
+}
+
+.carousel-container > .carousel-wrapper-container > .carousel-wrapper > .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.carousel-container .button {
+    cursor: pointer;
+}
+
+.carousel-container > .carousel-wrapper-container > .carousel-wrapper > .carousel-item > .item-wrapper {
+    overflow: hidden;
+    margin: 0 20px; /* расстояние между элементами */
+}
+
+@media (max-width: 699px) {
+    .carousel-container > .carousel-wrapper-container > .carousel-wrapper > .carousel-item {
+        flex-basis: 100%;
+    }
+}
+@media (min-width: 700px) {
+    .carousel-container > .carousel-wrapper-container > .carousel-wrapper > .carousel-item {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 900px) {
+    .carousel-container > .carousel-wrapper-container > .carousel-wrapper > .carousel-item {
+        flex-basis: 33.33%;
+    }
+}
+@media (min-width: 1200px) {
+    .carousel-container > .carousel-wrapper-container > .carousel-wrapper > .carousel-item {
+        flex-basis: 25%;
+    }
+}
+
+
+
+.carousel-container .button {
+    padding: 20px;
+    font-size: 2.5em;
+    color: #999;
+}
+
+.carousel-container .button:hover {
+    color: #333;
+}
+
+.carousel-container .button.next {
+    padding-right: 0;
+}
+
+.carousel-container .button.previous {
+    padding-left: 0;
+}
+
+.carousel-container .partner-logo-wrapper {
+    display: block;
+}
+
+.carousel-container .partner-logo-wrapper .partner-logo-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
