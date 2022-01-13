@@ -191,5 +191,7 @@ THUMBNAIL_ALIASES = {
         'publication-xl-long': {'size': (1280, 640), 'crop': True},
 
         'carousel-logo': {'size': (200, 200), 'crop': True},
+
+        'og-image': {'size': (1200, 630), 'crop': True},
     },
 }

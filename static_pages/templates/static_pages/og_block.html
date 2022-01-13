@@ -1,0 +1,21 @@
+{% load static %}
+{% load thumbnail %}
+
+
+<meta property="og:title" content="{% if og_object.title %}{{ og_object.title }}{% else %}ЭАЦ Северо-запад{% endif %}"/>
+
+{% if og_object.description %}<meta property="og:description" content="{{ og_object.description }}"/>{% endif %}
+
+{% if og_object.image %}
+	<meta property="og:image" content="{% if og_object.site_name %}{{ og_object.site_name }}{% endif %}{{ og_object.image|thumbnail_url:'og-image' }}"/>
+{% else %}
+	<meta property="og:image" content="{% if og_object.site_name %}{{ og_object.site_name }}{% endif %}{% static '/images/og-logo.jpg' %}"/>
+{% endif %}
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta property="og:type" content="{% if og_object.type %}{{ og_object.type }}{% else %}website{% endif %}"/>
+
+{% if og_object.url %}<meta property="og:url" content= "{% if og_object.site_name %}{{ og_object.site_name }}{% endif %}{{ og_object.url }}" />{% endif %}
+
+{% if og_object.site_name %}<meta property="og:site_name" content="{{ og_object.site_name }}"/>{% endif %}

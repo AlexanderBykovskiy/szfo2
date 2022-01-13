@@ -76,3 +76,8 @@ def slider_block():
         return {'slider_list': slider_list}
     else:
         return {'slider_list': None}
+
+
+@register.inclusion_tag('static_pages/og_block.html')
+def og_block(og_object):
+    return {'og_object': og_object}

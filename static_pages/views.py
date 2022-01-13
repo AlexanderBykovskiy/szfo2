@@ -1,11 +1,26 @@
-from django.shortcuts import render, get_object_or_404
+import os
+from pathlib import Path
+import environ
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from feedback.forms import FeedbackForm
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 def index_page_view(request):
 
     page_object = get_object_or_404(StaticPageModel, slug='index')
+
+    og_object = {
+        'description': page_object.page_description,
+        'site_name': env('DOMAIN'),
+    }
+
+    page_object.og = og_object
 
     context = {
         'page_object': page_object,
@@ -15,13 +30,26 @@ def index_page_view(request):
 
 
 def static_page_view(request, slug):
+
     page_object = get_object_or_404(StaticPageModel, slug=slug)
+
+    og_object = {
+        'title': page_object.header,
+        'description': page_object.page_description,
+        'site_name': env('DOMAIN'),
+    }
+
+    page_object.og = og_object
 
     context = {
         'page_object': page_object,
     }
 
-    if slug == 'contacts':
+    if slug == 'index':
+
+        return redirect('/')
+
+    elif slug == 'contacts':
 
         if request.method == 'POST':
             feedback_form = FeedbackForm(request.POST)

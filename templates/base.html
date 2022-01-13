@@ -3,10 +3,14 @@
 {% load static %}
 {% load static_pages_tags %}
 
-<html lang="ru">
+<html prefix="og: //ogp.me/ns#" lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	{% block og-header %}
+		{% og_block page_object.og %}
+	{% endblock %}
 
 	<link type="text/css" href="{% static '/css/tailwind.css' %}" rel="stylesheet">
 

@@ -1,8 +1,16 @@
+import os
+from pathlib import Path
+import environ
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from static_pages.models import StaticPageModel
 from .models import *
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 class ArticlesList(ListView):
@@ -17,6 +25,15 @@ class ArticlesList(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         page_object = get_object_or_404(StaticPageModel, id='articles')
+
+        og_object = {
+            'title': page_object.header,
+            'description': page_object.page_description,
+            'site_name': env('DOMAIN'),
+        }
+
+        page_object.og = og_object
+
         context['page_object'] = page_object
         return context
 
@@ -36,9 +53,20 @@ class ArticlesItem(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        og_object = {
+            'title': self.object.header,
+            'description': self.object.short_content,
+            'image': self.object.cover,
+            'type': 'article',
+            'url': self.object.get_absolute_url(),
+            'site_name': env('DOMAIN'),
+        }
+
         context['page_object'] = {
             'id': 'articles',
-            'header': self.object.header
+            'header': self.object.header,
+            'og': og_object,
         }
         return context
 
@@ -55,6 +83,15 @@ class PublicationsList(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         page_object = get_object_or_404(StaticPageModel, id='publications')
+
+        og_object = {
+            'title': page_object.header,
+            'description': page_object.page_description,
+            'site_name': env('DOMAIN'),
+        }
+
+        page_object.og = og_object
+
         context['page_object'] = page_object
         return context
 
