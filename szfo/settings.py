@@ -168,6 +168,7 @@ CKEDITOR_CONFIGS = {
             'uploadwidget',
         ]),
         'extraAllowedContent': 'span; nav; svg; path; g; style; stop; linearGradient; circle; *[*]; *(*);',
+        'disallowedContent': 'img{width,height}'
     }
 }
 
