@@ -1615,11 +1615,14 @@ body > .bottom > .footer-container {
 }
 
 .slider .text {
-  position: absolute;
-  bottom: 2.5rem;
-  display: none;
+  display: flex;
   width: 100%;
-  background-color: rgb(17 24 39 / 0.4);
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1.5rem;
@@ -1630,7 +1633,19 @@ body > .bottom > .footer-container {
 
 @media (min-width: 640px) {
   .slider .text {
+    position: absolute;
+  }
+
+  .slider .text {
+    bottom: 2.5rem;
+  }
+
+  .slider .text {
     display: block;
+  }
+
+  .slider .text {
+    background-color: rgb(17 24 39 / 0.4);
   }
 
   .slider .text {
@@ -1643,6 +1658,31 @@ body > .bottom > .footer-container {
   .slider .text {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+}
+
+#slider .slider__wrapper {
+  background-color: transparent;
+}
+
+#slider .slider__item > a {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+#slider .slider__indicators {
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  #slider .slider__indicators {
+    position: absolute;
+  }
+
+  #slider .slider__indicators {
+    display: flex;
   }
 }
 

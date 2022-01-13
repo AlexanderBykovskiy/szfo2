@@ -414,9 +414,20 @@ body > .bottom > .footer-container {
 }
 
 .slider .text {
-    @apply hidden sm:block absolute bottom-10 w-full py-2 px-6 bg-gray-900/40 md:text-2xl sm:text-xl   text-white
+    @apply flex flex-col justify-center items-center sm:block flex-grow sm:absolute sm:bottom-10 w-full py-2 px-6 bg-sky-700 sm:bg-gray-900/40 md:text-2xl sm:text-xl text-white
 }
 
+#slider .slider__wrapper {
+    @apply bg-transparent
+}
+
+#slider .slider__item > a {
+    @apply flex flex-col h-full
+}
+
+#slider .slider__indicators {
+    @apply relative sm:absolute hidden sm:flex
+}
 
 #mobil_menu_container {
     @apply fixed visible inset-0 flex z-40 bg-white/90 transition-colors
