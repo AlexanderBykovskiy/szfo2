@@ -192,6 +192,6 @@ THUMBNAIL_ALIASES = {
 
         'carousel-logo': {'size': (200, 200), 'crop': True},
 
-        'og-image': {'size': (1200, 630), 'crop': True},
+        'og-image': {'size': (720, 562), 'crop': True},
     },
 }
