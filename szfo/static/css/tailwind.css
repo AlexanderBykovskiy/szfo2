@@ -1135,8 +1135,67 @@ body > .bottom > .footer-container {
   justify-content: center;
 }
 
-.pagination ul {
+.pagination {
+  margin-top: 1.5rem;
   display: flex;
+  justify-content: center;
+}
+
+.pagination ul {
+  display: inline-flex;
+}
+
+.pagination ul > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(1px * var(--tw-divide-x-reverse));
+  border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
+.pagination ul {
+  border-radius: 0.125rem;
+  border-width: 1px;
+}
+
+.pagination ul > li > a,
+.pagination ul > li.active
+{
+  box-sizing: border-box;
+  display: block;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms
+}
+
+@media (min-width: 640px) {
+  .pagination ul > li > a, .pagination ul > li.active {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .pagination ul > li > a, .pagination ul > li.active {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.pagination ul > li.active {
+  --tw-border-opacity: 1;
+  border-color: rgb(3 105 161 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.pagination ul > li > a:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .contacts-content {

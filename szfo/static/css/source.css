@@ -188,9 +188,31 @@ body > .bottom > .footer-container {
 }
 
 
-.pagination ul {
-    @apply flex
+
+.pagination {
+    @apply mt-6 flex justify-center
 }
+
+.pagination ul {
+    @apply inline-flex border rounded-sm divide-x
+}
+
+.pagination ul > li > a,
+.pagination ul > li.active
+{
+    box-sizing: border-box;
+    @apply block px-2.5 py-1 sm:px-4 sm:py-2 transition-colors
+}
+
+.pagination ul > li.active {
+    @apply bg-sky-700 text-white border-sky-700
+}
+
+.pagination ul > li > a:hover {
+    @apply bg-gray-50
+}
+
+
 
 .contacts-content {
      @apply flex flex-col gap-y-4
