@@ -243,9 +243,23 @@ body > .bottom > .footer-container {
 }
 
 .author {
-    @apply text-gray-400 text-lg mt-6
+    @apply text-gray-400 text-lg mt-6 text-right
 }
 
+.pdf-file {
+    @apply flex bg-no-repeat gap-2 items-center
+}
+
+.pdf-file > .icon {
+    @apply block w-10 h-auto
+}
+
+.pdf-file > .text {
+    @apply text-sky-700 text-lg
+}
+.pdf-file:hover > .text {
+    @apply text-sky-700 underline
+}
 
 .article-list {
     @apply flex flex-col gap-y-10

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load thumbnail %}
+{% load static %}
 {% load static_pages_tags %}
 
 
@@ -32,6 +33,13 @@
 					{{ article_item.content }}
 				{% endautoescape %}
 			</div>
+
+			{% if article_item.pdf_file %}
+				<a class="pdf-file" href="{{ article_item.pdf_file.url }}" download>
+					<img class="icon" src="{% static '/icons/pdf-icon-color.svg' %}" alt="Download pdf">
+					<span class="text">Прикрепленный файл</span>
+				</a>
+			{% endif %}
 
 			{% if article_item.author %}
 				<div class="author">

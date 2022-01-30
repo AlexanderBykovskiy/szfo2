@@ -1,3 +1,4 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.urls import reverse
 from django.contrib import admin
@@ -31,6 +32,7 @@ class ArticlesModel(SEOModel):
         blank=True,
         null=True,
         default=None,
+        validators=[FileExtensionValidator(allowed_extensions=['pdf'])]
     )
     author = models.CharField(
         max_length=255,

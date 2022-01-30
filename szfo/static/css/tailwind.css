@@ -1241,10 +1241,38 @@ body > .bottom > .footer-container {
 
 .author {
   margin-top: 1.5rem;
+  text-align: right;
   font-size: 1.125rem;
   line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.pdf-file {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-repeat: no-repeat;
+}
+
+.pdf-file > .icon {
+  display: block;
+  height: auto;
+  width: 2.5rem;
+}
+
+.pdf-file > .text {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(3 105 161 / var(--tw-text-opacity));
+}
+
+.pdf-file:hover > .text {
+  --tw-text-opacity: 1;
+  color: rgb(3 105 161 / var(--tw-text-opacity));
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .article-list {
