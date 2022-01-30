@@ -25,6 +25,13 @@ class ArticlesModel(SEOModel):
         config_name='default',
         verbose_name='Содержимое',
     )
+    pdf_file = models.FileField(
+        upload_to='files/articles/%Y/%m',
+        verbose_name='Файл pdf',
+        blank=True,
+        null=True,
+        default=None,
+    )
     author = models.CharField(
         max_length=255,
         blank=True,
