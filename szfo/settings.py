@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_cleanup.apps.CleanupConfig',
     'static_pages.apps.StaticPagesConfig',
     'feedback.apps.FeedbackConfig',
     'news.apps.NewsConfig',
