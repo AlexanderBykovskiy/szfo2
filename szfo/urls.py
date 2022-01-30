@@ -10,7 +10,7 @@ from partners.views import PartnersList, PartnersItem
 
 urlpatterns = [
     re_path(
-        r'^admin/?',
+        r'^manage/?',
         admin.site.urls
     ),
     re_path(
