@@ -1391,6 +1391,16 @@ body > .bottom > .footer-container {
   justify-content: center;
 }
 
+.publication-list  > .publication-item .text .published-source {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
 .partner-list {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
