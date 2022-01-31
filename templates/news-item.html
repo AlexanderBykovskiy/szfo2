@@ -33,6 +33,10 @@
 				{% endautoescape %}
 			</div>
 
+			{% if news_item.video_file %}
+				<video class="video-file" src="{{ news_item.video_file.url }}" controls></video>
+			{% endif %}
+
 			{% if news_item.author %}
 				<div class="author">
 					{{ news_item.author }}
