@@ -247,7 +247,7 @@ body > .bottom > .footer-container {
 }
 
 .pdf-file {
-    @apply flex bg-no-repeat gap-2 items-center
+    @apply mt-6 flex bg-no-repeat gap-2 items-center
 }
 
 .pdf-file > .icon {
@@ -260,6 +260,12 @@ body > .bottom > .footer-container {
 .pdf-file:hover > .text {
     @apply text-sky-700 underline
 }
+
+
+.video-file {
+    @apply mt-6 w-full
+}
+
 
 .article-list {
     @apply flex flex-col gap-y-10

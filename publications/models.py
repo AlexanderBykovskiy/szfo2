@@ -32,7 +32,7 @@ class ArticlesModel(SEOModel):
         blank=True,
         null=True,
         default=None,
-        validators=[FileExtensionValidator(allowed_extensions=['avi', 'wmv', 'mov', 'mkv', '3gp', 'mpeg', 'mpeg-2', 'mpeg-4'])]
+        validators=[FileExtensionValidator(allowed_extensions=['avi', 'wmv', 'mov', 'mkv', '3gp', 'mpeg', 'mpeg-2', 'mpeg-4', 'mp4'])]
     )
     pdf_file = models.FileField(
         upload_to='files/articles/%Y/%m',

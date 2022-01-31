@@ -34,6 +34,10 @@
 				{% endautoescape %}
 			</div>
 
+			{% if article_item.video_file %}
+				<video class="video-file" src="{{ article_item.video_file.url }}" controls></video>
+			{% endif %}
+
 			{% if article_item.pdf_file %}
 				<a class="pdf-file" href="{{ article_item.pdf_file.url }}" download>
 					<img class="icon" src="{% static '/icons/pdf-icon-color.svg' %}" alt="Download pdf">
