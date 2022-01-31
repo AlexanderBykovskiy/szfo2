@@ -26,6 +26,14 @@ class ArticlesModel(SEOModel):
         config_name='default',
         verbose_name='Содержимое',
     )
+    video_file = models.FileField(
+        upload_to='files/video/%Y/%m',
+        verbose_name='Файл видео',
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator(allowed_extensions=['avi', 'wmv', 'mov', 'mkv', '3gp', 'mpeg', 'mpeg-2', 'mpeg-4'])]
+    )
     pdf_file = models.FileField(
         upload_to='files/articles/%Y/%m',
         verbose_name='Файл pdf',
