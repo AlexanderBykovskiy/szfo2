@@ -38,33 +38,33 @@ class PartnersList(ListView):
         return context
 
 
-class PartnersItem(DetailView):
-    model = PartnersModel
-    template_name = 'partners-item.html'
-    slug_url_kwarg = 'slug'
-    context_object_name = 'partner_item'
+# class PartnersItem(DetailView):
+#    model = PartnersModel
+#    template_name = 'partners-item.html'
+#    slug_url_kwarg = 'slug'
+#    context_object_name = 'partner_item'
 
-    def get_object(self, **kwargs):
-        obj = super().get_object()
-        if obj.published:
-            return obj
-        else:
-            raise Http404('Запись не найдена')
+#    def get_object(self, **kwargs):
+#        obj = super().get_object()
+#        if obj.published:
+#            return obj
+#        else:
+#            raise Http404('Запись не найдена')
 
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
+#    def get_context_data(self, *, object_list=None, **kwargs):
+#        context = super().get_context_data(**kwargs)
 
-        og_object = {
-            'title': self.object.header,
-            'image': self.object.logo,
-            'type': 'article',
-            'url': self.object.get_absolute_url(),
-            'site_name': env('DOMAIN'),
-        }
+#        og_object = {
+#            'title': self.object.header,
+#            'image': self.object.logo,
+#            'type': 'article',
+#            'url': self.object.get_absolute_url(),
+#            'site_name': env('DOMAIN'),
+#        }
 
-        context['page_object'] = {
-            'id': 'partners',
-            'header': self.object.header,
-            'og': og_object,
-        }
-        return context
+#        context['page_object'] = {
+#            'id': 'partners',
+#            'header': self.object.header,
+#            'og': og_object,
+#        }
+#        return context
